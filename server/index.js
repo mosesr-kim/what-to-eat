@@ -13,3 +13,7 @@ app.listen(process.env.PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`express server listening on port ${process.env.PORT}`);
 });
+
+const apiKey = process.env.YELP_API_KEY;
+// eslint-disable-next-line no-console
+console.log(apiKey);

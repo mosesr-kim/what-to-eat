@@ -9,7 +9,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <>
-        <div className="header row">
+        {/* <div className="header row">
           <i className="fas fa-bars navBarIcon col-1"></i>
           <div className="logo col-2">
             <div className="outerLogoBorder">
@@ -31,14 +31,14 @@ export default class Header extends React.Component {
             id="search"
             placeholder="food, restaurants, businesses..."
             required/>
-            {/* <input
+            <input
             type="text"
             name="location"
             className="locationSearch"
             id=""
-            required/> */}
+            required/>
           </form>
-        </div>
+        </div> */}
       </>
     );
   }
