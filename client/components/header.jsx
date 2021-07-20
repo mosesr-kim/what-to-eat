@@ -11,13 +11,12 @@ export default class Header extends React.Component {
       <>
         <div>
           <i className="fas fa-bars navBarIcon"></i>
-          <div className="logoOuterBorder">
-            <div className="logoInnerBorder">
-              <p className="logoText">
-                &gt;_what to eat?
-              </p>
+          <div className="logo">
+            <div className="innerLogo">
+              &gt;_what to eat?
             </div>
           </div>
+          {/* <img src="logo.svg" alt="logo" className="logo" /> */}
         </div>
       </>
     );
