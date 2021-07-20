@@ -1,3 +1,7 @@
 body {
   background-color: #363434;
 }
+
+.row {
+  display: flex;
+}

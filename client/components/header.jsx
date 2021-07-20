@@ -4,42 +4,35 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {}
 
   render() {
     return (
-      <>
-        {/* <div className="header row">
-          <i className="fas fa-bars navBarIcon col-1"></i>
-          <div className="logo col-2">
-            <div className="outerLogoBorder">
-              <div className="innerLogoBorder">
-                <p className="innerLogoText">
-                  &gt;_what to eat?
-                </p>
-              </div>
-            </div>
-          </div>
-          <form action="" className="searchForm col-4">
+      <div className="header row">
+        <div className="col-1">
+          <i className="fas fa-bars navBarIcon"></i>
+        </div>
+        <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
+          <img src="logo.svg" alt="what to eat logo" className="logo" />
+        </div>
+        <div className="col-12 col-md-8 d-flex justify-content-center justify-content-md-start">
+          <form action="" className="searchForm">
             <label htmlFor="search">
               <i className="fas fa-search searchIcon"></i>
             </label>
             <input
-            type="text"
-            name="restaurant"
-            className="searchInput"
-            id="search"
-            placeholder="food, restaurants, businesses..."
-            required/>
-            <input
-            type="text"
-            name="location"
-            className="locationSearch"
-            id=""
-            required/>
+              type="text"
+              name="restaurant"
+              className="searchInput"
+              id="search"
+              placeholder="food, restaurants, businesses..."
+              required />
           </form>
-        </div> */}
-      </>
+        </div>
+      </div>
     );
   }
 }
