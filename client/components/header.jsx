@@ -12,20 +12,30 @@ export default class Header extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleRestaurantChange() {
+  handleRestaurantChange(event) {
     this.setState({ restaurant: event.target.value });
     // console.log(event.target.value);
   }
 
-  handleLocationChange() {
+  handleLocationChange(event) {
     this.setState({ location: event.target.value });
     // console.log(event.target.value);
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     event.preventDefault();
     event.target.reset();
     // console.log(this.state);
+    const req = {
+      method: 'GET',
+      headers: {
+        restaurant: this.state.restaurant,
+        location: this.state.location
+      }
+    };
+
+    fetch('/api/businesses', req);
+    // .then(response => console.log(response));
   }
 
   render() {
@@ -37,12 +47,12 @@ export default class Header extends React.Component {
         <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
           <img src="logo.svg" alt="what to eat logo" className="logo" />
         </div>
-        <div className="col-12 col-md-8 d-flex justify-content-center justify-content-md-start">
+        <div className="col-12 col-md-8 d-flex flex-nowrap justify-content-center justify-content-md-start">
           <form action="" className="searchForm" onSubmit={this.handleSubmit}>
-            <div className="inputContainer">
-              <label htmlFor="restaurant">
+            {/* <div className="inputContainer"> */}
+              {/* <label htmlFor="restaurant">
                 <i className="fas fa-search searchIcon"></i>
-              </label>
+              </label> */}
               <input
                 type="text"
                 name="restaurant"
@@ -53,11 +63,11 @@ export default class Header extends React.Component {
                 onChange={this.handleRestaurantChange}
                 required
               />
-            </div>
-            <div className="inputContainer">
-              <label htmlFor="location">
+            {/* </div> */}
+            {/* <div className="inputContainer"> */}
+              {/* <label htmlFor="location">
                 <i className="fas fa-map-marker-alt markerIcon"></i>
-              </label>
+              </label> */}
               <input
                 type="text"
                 name="location"
@@ -68,7 +78,10 @@ export default class Header extends React.Component {
                 onChange={this.handleLocationChange}
                 required
               />
-            </div>
+            {/* </div> */}
+              <button type="submit" className="submitButton">
+                <i className="fas fa-search searchIcon"></i>
+              </button>
           </form>
         </div>
       </div>

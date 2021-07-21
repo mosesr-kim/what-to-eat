@@ -15,3 +15,7 @@ app.listen(process.env.PORT, () => {
 });
 
 // const apiKey = process.env.YELP_API_KEY;
+
+app.get('/api/businesses', (req, res) => {
+  // const { restaurant, location } = req.headers;
+});
