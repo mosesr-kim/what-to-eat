@@ -14,18 +14,16 @@ export default class Header extends React.Component {
 
   handleRestaurantChange(event) {
     this.setState({ restaurant: event.target.value });
-    // console.log(event.target.value);
   }
 
   handleLocationChange(event) {
     this.setState({ location: event.target.value });
-    // console.log(event.target.value);
   }
 
   handleSubmit(event) {
     event.preventDefault();
     event.target.reset();
-    // console.log(this.state);
+
     const req = {
       method: 'GET',
       headers: {
@@ -34,8 +32,9 @@ export default class Header extends React.Component {
       }
     };
 
-    fetch('/api/businesses', req);
-    // .then(response => console.log(response));
+    fetch('/api/businesses', req)
+      .then(response => response.json())
+      .then(data => data);
   }
 
   render() {
