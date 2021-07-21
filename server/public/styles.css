@@ -1,14 +1,14 @@
 .header {
   border-bottom: 1px solid #e1dbd1;
-  padding-bottom: 25px;
+  padding-bottom: 1rem;
 }
 
 .navBarIcon {
   display: inline-block;
-  font-size: 30px;
+  font-size: 2rem;
   color: #e1dbd1;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .navBarIcon:hover {
@@ -17,50 +17,68 @@
 
 .logo {
   display: inline-block;
-  width: 200px;
-  height: 40px;
+  width: 12.5rem;
+  height: 2.5;
   padding: 0;
-  margin-top: 20px;
-}
-
-.searchIcon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #363434;
-  background-color: #e1dbd1;
-  font-size: 20px;
-}
-
-.searchIcon:hover {
-  cursor: pointer;
+  margin-top: 1rem;
 }
 
 .searchForm {
-  display: inline-block;
   position: relative;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
-.searchInput {
-  width: 375px;
-  height: 40px;
+label {
+  position: relative;
+}
+
+.searchIcon,
+.markerIcon {
+  position: absolute;
+  bottom: -0.1rem;
+  left: 0.5rem;
+  color: #363434;
+  background-color: #e1dbd1;
+  font-size: 1rem;
+}
+
+.searchIcon:hover,
+.markerIcon:hover {
+  cursor: pointer;
+}
+
+.restaurantSearchInput,
+.locationSearchInput {
+  width: 20rem;
+  height: 2.5rem;
   background-color: #e1dbd1;
   border: none;
-  border-radius: 5px;
-  text-indent: 3rem;
-  font-size: 16px;
+
+  /* border-radius: 0.3rem; */
+  text-indent: 2rem;
+  font-size: 1rem;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1rem;
   color: #363434;
 }
 
-.searchInput::placeholder {
+.locationSearchInput {
+  width: 12rem;
+  height: 2.5rem;
+}
+
+.restaurantSearchInput::placeholder,
+.locationSearchInput::placeholder {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.1rem;
 }
 
-.searchInput:focus {
+.restaurantSearchInput:focus,
+.locationSearchInput:focus {
   outline: none;
+}
+
+.inputContainer {
+  display: inline-block;
 }

@@ -7,12 +7,19 @@ export default class Header extends React.Component {
       restaurant: '',
       location: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleRestaurantChange = this.handleRestaurantChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange() {
+  handleRestaurantChange() {
     this.setState({ restaurant: event.target.value });
+    // console.log(event.target.value);
+  }
+
+  handleLocationChange() {
+    this.setState({ location: event.target.value });
+    // console.log(event.target.value);
   }
 
   handleSubmit() {
@@ -31,19 +38,37 @@ export default class Header extends React.Component {
           <img src="logo.svg" alt="what to eat logo" className="logo" />
         </div>
         <div className="col-12 col-md-8 d-flex justify-content-center justify-content-md-start">
-          <form action="" className="searchForm" onSubmit={ this.handleSubmit }>
-            <label htmlFor="search">
-              <i className="fas fa-search searchIcon"></i>
-            </label>
-            <input
-              type="text"
-              name="restaurant"
-              className="searchInput"
-              id="search"
-              placeholder="food, restaurants, businesses..."
-              value={ this.state.value }
-              onChange={ this.handleChange }
-              required />
+          <form action="" className="searchForm" onSubmit={this.handleSubmit}>
+            <div className="inputContainer">
+              <label htmlFor="restaurant">
+                <i className="fas fa-search searchIcon"></i>
+              </label>
+              <input
+                type="text"
+                name="restaurant"
+                className="restaurantSearchInput"
+                id="restaurant"
+                placeholder="food, restaurants, businesses..."
+                value={this.state.value}
+                onChange={this.handleRestaurantChange}
+                required
+              />
+            </div>
+            <div className="inputContainer">
+              <label htmlFor="location">
+                <i className="fas fa-map-marker-alt markerIcon"></i>
+              </label>
+              <input
+                type="text"
+                name="location"
+                className="locationSearchInput"
+                id="location"
+                placeholder="city, state or zip"
+                value={this.state.value}
+                onChange={this.handleLocationChange}
+                required
+              />
+            </div>
           </form>
         </div>
       </div>
