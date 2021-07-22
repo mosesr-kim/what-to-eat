@@ -1,4 +1,5 @@
 import React from 'react';
+import Stars from './stars';
 
 export default class SearchResultList extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class SearchResultList extends React.Component {
               </div>
               <div className="row g-0">
                 <p className="restaurantRating">
-                  { rating } { reviewCount } Reviews
+                  { rating } <Stars rating={ rating } /> { reviewCount } Reviews
                 </p>
               </div>
               <div className="row g-0">
