@@ -22,10 +22,10 @@ export default class SearchResultList extends React.Component {
       return (
         <li key={ id }>
           <div className="restaurantContainer row g-0">
-            <div className="imageColumn col-20">
+            <div className="imageColumn">
               <img src={ imageURL } alt="business image" className="searchImage"/>
             </div>
-            <div className="textColumn col-80 align-items-start">
+            <div className="textColumn align-items-start">
               <div className="row g-0">
                 <p className="restaurantNameText">
                   { number }. { name }

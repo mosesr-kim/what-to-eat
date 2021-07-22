@@ -17,8 +17,8 @@
 
 .logo {
   display: inline-block;
-  width: 12.5rem;
-  height: 2.5;
+  width: 10rem;
+  height: 2;
   padding: 0;
   margin-top: 1rem;
 }
@@ -92,7 +92,7 @@
 .searchResultHeaderText {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 0.15rem;
   color: #e8c4b8;
 }
@@ -106,15 +106,18 @@ li {
 }
 
 .restaurantContainer {
+  flex-wrap: nowrap;
   background-color: #e1dbd1;
   margin-bottom: 10px;
   border-radius: 5px;
   height: auto;
 }
 
-/* .imageColumn {
-
-} */
+.imageColumn {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
 
 .searchImage {
   width: 90px;
@@ -126,8 +129,10 @@ li {
 }
 
 .textColumn {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   justify-content: center;
-  letter-spacing: 0.1rem;
   height: 100px;
   overflow: hidden;
 }
@@ -145,6 +150,7 @@ li {
 .restaurantNameText {
   font-weight: 500;
   font-size: 1rem;
+  color: #363434;
 }
 
 .restaurantRating {
@@ -152,17 +158,21 @@ li {
   font-style: italic;
   color: #7c7777;
   font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 }
 
 .restaurantCategory {
   font-style: italic;
   font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  color: #363434;
 }
 
 .restaurantAddress {
   font-style: italic;
   color: #7c7777;
   font-size: 0.75rem;
+  letter-spacing: 0.05rem;
 }
 
 .imageColumn,
@@ -170,19 +180,73 @@ li {
   padding: 0;
 }
 
+@media (min-width: 568px) {
+  .searchResultContainer {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 668px) {
+  .searchResultContainer {
+    max-width: 80%;
+  }
+}
+
 @media (min-width: 768px) {
   .searchResultContainer {
-    max-width: 50%;
-    margin: auto;
+    max-width: 70%;
   }
 
   .searchImage {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 5px;
     padding: 0;
-    margin: 10px;
+    margin: 5px;
+  }
+
+  .imageColumn {
+    width: auto;
+  }
+
+  .textColumn {
+    height: 150px;
+    justify-content: space-evenly;
+  }
+
+  .restaurantNameText {
+    font-size: 1.25rem;
+  }
+
+  .restaurantRating,
+  .restaurantCategory,
+  .restaurantAddress {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo {
+    height: 2.5rem;
+    width: 12.5rem;
+  }
+
+  .searchResultContainer {
+    max-width: 60%;
+  }
+
+  .restaurantNameText,
+  .restaurantRating,
+  .restaurantCategory,
+  .restaurantAddress {
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .searchResultContainer {
+    max-width: 50%;
   }
 }
 
