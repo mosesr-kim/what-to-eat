@@ -21,11 +21,11 @@ export default class SearchResultList extends React.Component {
 
       return (
         <li key={ id }>
-          <div className="restaurantContainer">
-            <div className="imageColumn">
-              <img src={ imageURL } alt="business image" />
+          <div className="restaurantContainer row">
+            <div className="imageColumn col-4">
+              <img src={ imageURL } alt="business image" className="searchImage"/>
             </div>
-            <div className="textColumn">
+            <div className="textColumn col-8">
               <div className="row">
                 <h3 className="restaurantNameText">
                   { number }. { name }

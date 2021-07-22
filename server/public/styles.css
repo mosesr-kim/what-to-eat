@@ -29,25 +29,12 @@
   margin-top: 1rem;
 }
 
-/* label {
-  position: relative;
-}
-
-.searchIcon,
-.markerIcon {
-  position: absolute;
-  bottom: -0.1rem;
-  left: 0.5rem;
-  color: #363434;
-  background-color: #e1dbd1;
-  font-size: 1rem;
-} */
-
 .submitButton {
   border: none;
   background-color: #e1dbd1;
   height: 2.5rem;
-  border-left: 1px solid #363436;
+  width: 2.5rem;
+  border-radius: 0 0.3rem 0.3rem 0;
 }
 
 .searchIcon {
@@ -63,13 +50,11 @@
 
 .restaurantSearchInput,
 .locationSearchInput {
-  width: 20rem;
+  width: 19rem;
   height: 2.5rem;
   background-color: #e1dbd1;
   border: none;
-
-  /* border-radius: 0.3rem; */
-
+  border-radius: 0.3rem 0 0 0.3rem;
   text-indent: 1rem;
   font-size: 1rem;
   font-family: 'Raleway', sans-serif;
@@ -78,7 +63,7 @@
 }
 
 .locationSearchInput {
-  width: 12rem;
+  width: 10rem;
   height: 2.5rem;
   border-left: 1px solid #363434;
   border-radius: 0;
@@ -94,4 +79,69 @@
 .restaurantSearchInput:focus,
 .locationSearchInput:focus {
   outline: none;
+}
+
+.searchResultContainer {
+  width: 80%;
+  margin: auto;
+}
+
+.searchResultHeader {
+  margin: 20px 0 20px 0;
+}
+
+.searchResultHeaderText {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.15rem;
+  color: #e8c4b8;
+}
+
+.searchResultList {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.restaurantContainer {
+  background-color: #e1dbd1;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  height: 120px;
+}
+
+/* .imageColumn {
+
+} */
+
+.searchImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  padding: 0;
+  margin: 10px;
+}
+
+.textColumn {
+  justify-content: space-between;
+  letter-spacing: 0.1rem;
+  height: 120px;
+}
+
+.restaurantNameText,
+.restaurantRating,
+.restaurantCategory,
+.restaurantAddress {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.imageColumn,
+.textColumn {
+  padding: 0;
 }

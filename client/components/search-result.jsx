@@ -14,12 +14,12 @@ export default class SearchResults extends React.Component {
     }
     return (
       <>
-        <div className="searchResultHeader">
-          <h2 className="searchResultHeaderText">
-            {restaurant} near {location}
-          </h2>
-        </div>
         <div className="searchResultContainer">
+          <div className="searchResultHeader">
+            <h2 className="searchResultHeaderText">
+              {restaurant} near {location}
+            </h2>
+          </div>
           <SearchResultList searchResults={this.props.searchResults.searchResults} />
         </div>
       </>
