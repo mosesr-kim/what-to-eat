@@ -10,6 +10,9 @@ export default class SearchResultList extends React.Component {
   render() {
     let counter = 1;
     const searchResults = this.props.searchResults;
+    if (searchResults.error) {
+      return null;
+    }
     const searchResultsLi = searchResults.map(result => {
       const { id, name, categories, rating, price, location } = result;
       const imageURL = result.image_url;

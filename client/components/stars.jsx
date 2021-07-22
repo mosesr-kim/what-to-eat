@@ -26,9 +26,3 @@ export default class Stars extends React.Component {
     );
   }
 }
-
-/*
-full 'fas fa-star'
-half 'fas fa-star-half-alt'
-empty 'far fa-star'
-*/

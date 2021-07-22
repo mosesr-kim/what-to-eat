@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
 import SearchResults from '../components/search-result';
-// import SearchResults from '../components/searchResults.jsx';
 
 export default class Home extends React.Component {
   constructor(props) {

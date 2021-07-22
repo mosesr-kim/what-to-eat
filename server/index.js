@@ -28,5 +28,10 @@ app.get('/api/businesses', (req, res, next) => {
     location: location
   }).then(response => {
     res.status(200).send(response.jsonBody.businesses);
-  }).catch(err => next(err));
+  }).catch(err => {
+    if (err.statusCode === 400) {
+      return res.json({ error: 'No results' });
+    }
+    next(err);
+  });
 });
