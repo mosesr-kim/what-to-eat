@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../components/header.jsx';
+import Header from '../components/header';
+import SearchResults from '../components/search-result';
 // import SearchResults from '../components/searchResults.jsx';
 
 export default class Home extends React.Component {
@@ -8,7 +9,7 @@ export default class Home extends React.Component {
     this.state = {
       restaurant: '',
       location: '',
-      searchResults: []
+      searchResults: null
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -27,7 +28,6 @@ export default class Home extends React.Component {
           location: searchParams.location,
           searchResults: data
         });
-        // console.log(this.state);
       });
   }
 
@@ -35,6 +35,7 @@ export default class Home extends React.Component {
     return (
       <>
         <Header onSubmit={ this.handleSearch } />
+        <SearchResults searchResults={ this.state } />
       </>
     );
   }
