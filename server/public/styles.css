@@ -33,7 +33,7 @@
   border: none;
   background-color: #e1dbd1;
   height: 2.5rem;
-  width: 2.5rem;
+  width: 2rem;
   border-radius: 0 0.3rem 0.3rem 0;
 }
 
@@ -43,19 +43,18 @@
   font-size: 1rem;
 }
 
-.searchIcon:hover,
-.markerIcon:hover {
+.searchIcon:hover {
   cursor: pointer;
 }
 
 .restaurantSearchInput,
 .locationSearchInput {
-  width: 19rem;
+  width: 18rem;
   height: 2.5rem;
   background-color: #e1dbd1;
   border: none;
   border-radius: 0.3rem 0 0 0.3rem;
-  text-indent: 1rem;
+  text-indent: 0.5rem;
   font-size: 1rem;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1rem;
@@ -82,12 +81,12 @@
 }
 
 .searchResultContainer {
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
 
 .searchResultHeader {
-  margin: 20px 0 20px 0;
+  margin: 20px 0 20px 40px;
 }
 
 .searchResultHeaderText {
@@ -108,9 +107,9 @@ li {
 
 .restaurantContainer {
   background-color: #e1dbd1;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  height: 120px;
+  height: auto;
 }
 
 /* .imageColumn {
@@ -118,30 +117,82 @@ li {
 } */
 
 .searchImage {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 5px;
   padding: 0;
-  margin: 10px;
+  margin: 5px;
 }
 
 .textColumn {
-  justify-content: space-between;
+  justify-content: center;
   letter-spacing: 0.1rem;
-  height: 120px;
+  height: 100px;
+  overflow: hidden;
 }
 
 .restaurantNameText,
 .restaurantRating,
 .restaurantCategory,
 .restaurantAddress {
-  padding: 0;
+  padding-left: 10px;
   margin-bottom: 0;
   font-size: 1rem;
+  font-family: 'poppins', sans-serif;
+}
+
+.restaurantNameText {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.restaurantRating {
+  font-weight: 300;
+  font-style: italic;
+  color: #7c7777;
+  font-size: 0.8rem;
+}
+
+.restaurantCategory {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.restaurantAddress {
+  font-style: italic;
+  color: #7c7777;
+  font-size: 0.75rem;
 }
 
 .imageColumn,
 .textColumn {
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .searchResultContainer {
+    max-width: 50%;
+    margin: auto;
+  }
+
+  .searchImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    padding: 0;
+    margin: 10px;
+  }
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

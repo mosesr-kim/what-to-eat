@@ -21,27 +21,27 @@ export default class SearchResultList extends React.Component {
 
       return (
         <li key={ id }>
-          <div className="restaurantContainer row">
-            <div className="imageColumn col-4">
+          <div className="restaurantContainer row g-0">
+            <div className="imageColumn col-20">
               <img src={ imageURL } alt="business image" className="searchImage"/>
             </div>
-            <div className="textColumn col-8">
-              <div className="row">
-                <h3 className="restaurantNameText">
+            <div className="textColumn col-80 align-items-start">
+              <div className="row g-0">
+                <p className="restaurantNameText">
                   { number }. { name }
-                </h3>
+                </p>
               </div>
-              <div className="row">
+              <div className="row g-0">
                 <p className="restaurantRating">
                   { rating } { reviewCount } Reviews
                 </p>
               </div>
-              <div className="row">
+              <div className="row g-0">
                 <p className="restaurantCategory">
                   { price } &#8226; { categoryList }
                 </p>
               </div>
-              <div className="row">
+              <div className="row g-0">
                 <p className="restaurantAddress">
                   { displayAddress }
                 </p>

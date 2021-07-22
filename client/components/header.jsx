@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <>
-        <div className="header row">
+        <div className="header row g-0">
           <div className="col-1">
             <i className="fas fa-bars navBarIcon"></i>
           </div>

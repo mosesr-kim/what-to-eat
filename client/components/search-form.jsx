@@ -31,7 +31,7 @@ export default class SearchForm extends React.Component {
     return (
       <>
         <div className="col-12 col-md-8 d-flex flex-nowrap justify-content-center justify-content-md-start">
-          <form action="" className="searchForm" onSubmit={ this.handleSubmit }>
+          <form action="" className="searchForm" onSubmit={ this.handleSubmit } autoComplete="off">
             <input
               type="text"
               name="restaurant"
