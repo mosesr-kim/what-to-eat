@@ -1,5 +1,7 @@
 import React from 'react';
+import parseRoute from './lib/parse-route';
 import Home from './pages/home';
+import Details from './pages/details';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -7,7 +9,8 @@ export default class App extends React.Component {
     this.state = {
       lat: null,
       lng: null,
-      zipCode: null
+      zipCode: null,
+      route: parseRoute(window.location.hash)
     };
     this.handleSuccess = this.handleSuccess.bind(this);
   }
@@ -26,12 +29,30 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('hashchange', () => {
+      this.setState({ route: parseRoute(window.location.hash) });
+    });
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.handleSuccess);
     }
   }
 
+  renderPage() {
+    const { route } = this.state;
+    if (route.path === '') {
+      return <Home location={ this.state } />;
+    }
+    if (route.path === 'details') {
+      const businessId = route.params.get('businessId');
+      return <Details businessId={ businessId }/>;
+    }
+  }
+
   render() {
-    return <Home location={ this.state } />;
+    return (
+      <>
+        { this.renderPage() }
+      </>
+    );
   }
 }
