@@ -7,7 +7,7 @@ export default class SearchResultList extends React.Component {
     if (searchResults.error) return null;
     const searchResultsLi = searchResults.map((result, index) => {
       const number = index + 1;
-      const { id, name, categories, rating, price, location } = result;
+      const { id, alias, name, categories, rating, price, location } = result;
       const imageURL = result.image_url;
       const reviewCount = result.review_count;
       const displayAddress = location.display_address.join(' ');
@@ -15,7 +15,7 @@ export default class SearchResultList extends React.Component {
       const categoryList = categoryArray.join(', ');
 
       return (
-        <li key={ id }>
+        <li key={ id } businessid={ alias }>
           <div className="restaurantContainer row g-0">
             <div className="imageColumn">
               <img src={ imageURL } alt="business image" className="searchImage"/>
