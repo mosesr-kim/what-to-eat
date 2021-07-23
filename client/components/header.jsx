@@ -12,7 +12,7 @@ export default class Header extends React.Component {
           <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
             <img src="logo.svg" alt="what to eat logo" className="logo" />
           </div>
-          <SearchForm onSubmit={ this.props.onSubmit } />
+          <SearchForm onSubmit={ this.props.onSubmit } location={ this.props.location } />
         </div>
       </>
     );
