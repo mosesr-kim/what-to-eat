@@ -27,6 +27,12 @@ export default class SearchForm extends React.Component {
     this.props.onSubmit(searchParams);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      this.setState({ location: this.props.location.zipCode });
+    }
+  }
+
   render() {
     return (
       <>
@@ -38,7 +44,7 @@ export default class SearchForm extends React.Component {
               className="restaurantSearchInput"
               id="restaurant"
               placeholder="food, restaurants, businesses..."
-              value={ this.state.value }
+              value={ this.state.restaurant }
               onChange={ this.handleRestaurantChange }
               required
             />
@@ -48,7 +54,7 @@ export default class SearchForm extends React.Component {
               className="locationSearchInput"
               id="location"
               placeholder="city, state or zip"
-              value={ this.state.value }
+              value={ this.state.location }
               onChange={ this.handleLocationChange }
               required
             />
