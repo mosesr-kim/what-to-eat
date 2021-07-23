@@ -45,7 +45,14 @@ app.get(('/api/location'), (req, res, next) => {
   fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.GOOGLE_MAPS_API_KEY}`)
     .then(response => response.json())
     .then(data => {
-      res.status(200).send(data);
+      const addressComponents = data.results[0].address_components;
+      let zipCode = null;
+      for (let i = 0; i < addressComponents.length; i++) {
+        if (addressComponents[i].types[0] === 'postal_code') {
+          zipCode = addressComponents[i].long_name;
+        }
+      }
+      res.status(200).send(zipCode);
     })
     .catch(err => next(err));
 });

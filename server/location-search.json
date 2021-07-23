@@ -1,0 +1,754 @@
+{
+  "plus_code": {
+    "compound_code": "J7M5+XP Irvine, CA, USA",
+    "global_code": "8554J7M5+XP"
+  },
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "9210",
+          "short_name": "9210",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "Irvine Center Drive",
+          "short_name": "Irvine Center Dr",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "Irvine Research Center",
+          "short_name": "Irvine Research Center",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "92618",
+          "short_name": "92618",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "4661",
+          "short_name": "4661",
+          "types": [
+            "postal_code_suffix"
+          ]
+        }
+      ],
+      "formatted_address": "9210 Irvine Center Dr, Irvine, CA 92618, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.6348965,
+            "lng": -117.7406276
+          },
+          "southwest": {
+            "lat": 33.6346743,
+            "lng": -117.740934
+          }
+        },
+        "location": {
+          "lat": 33.6348008,
+          "lng": -117.7407734
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 33.6361343802915,
+            "lng": -117.7394318197085
+          },
+          "southwest": {
+            "lat": 33.6334364197085,
+            "lng": -117.7421297802915
+          }
+        }
+      },
+      "place_id": "ChIJNTARSd7n3IARfosshArEXn4",
+      "types": [
+        "premise"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "9200",
+          "short_name": "9200",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "Irvine Center Drive",
+          "short_name": "Irvine Center Dr",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "Irvine Research Center",
+          "short_name": "Irvine Research Center",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "92618",
+          "short_name": "92618",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "9200 Irvine Center Dr, Irvine, CA 92618, USA",
+      "geometry": {
+        "location": {
+          "lat": 33.6348675,
+          "lng": -117.7404985
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 33.63621648029149,
+            "lng": -117.7391495197085
+          },
+          "southwest": {
+            "lat": 33.6335185197085,
+            "lng": -117.7418474802915
+          }
+        }
+      },
+      "place_id": "ChIJhZt58Srn3IARnT0rOhu-oUA",
+      "plus_code": {
+        "compound_code": "J7M5+WR Irvine, CA, USA",
+        "global_code": "8554J7M5+WR"
+      },
+      "types": [
+        "establishment",
+        "point_of_interest"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Unnamed Road",
+          "short_name": "Unnamed Road",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "Irvine Research Center",
+          "short_name": "Irvine Research Center",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "92618",
+          "short_name": "92618",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "Unnamed Road, Irvine, CA 92618, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.6351438,
+            "lng": -117.7403029
+          },
+          "southwest": {
+            "lat": 33.6349316,
+            "lng": -117.7411367
+          }
+        },
+        "location": {
+          "lat": 33.6350377,
+          "lng": -117.7407198
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 33.63638668029149,
+            "lng": -117.7393708197085
+          },
+          "southwest": {
+            "lat": 33.6336887197085,
+            "lng": -117.7420687802915
+          }
+        }
+      },
+      "place_id": "ChIJCc8YNt7n3IARpJ0SoOei8dM",
+      "types": [
+        "route"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Irvine Research Center",
+          "short_name": "Irvine Research Center",
+          "types": [
+            "neighborhood",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "Irvine Research Center, Irvine, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.6465842,
+            "lng": -117.7237667
+          },
+          "southwest": {
+            "lat": 33.6286805,
+            "lng": -117.7464399
+          }
+        },
+        "location": {
+          "lat": 33.6369023,
+          "lng": -117.732939
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 33.6465842,
+            "lng": -117.7237667
+          },
+          "southwest": {
+            "lat": 33.6286805,
+            "lng": -117.7464399
+          }
+        }
+      },
+      "place_id": "ChIJsf6dTwvo3IARtKZLQjri_jg",
+      "types": [
+        "neighborhood",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "92618",
+          "short_name": "92618",
+          "types": [
+            "postal_code"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "Irvine, CA 92618, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.717746,
+            "lng": -117.680426
+          },
+          "southwest": {
+            "lat": 33.6283339,
+            "lng": -117.794755
+          }
+        },
+        "location": {
+          "lat": 33.665242,
+          "lng": -117.7490656
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 33.717746,
+            "lng": -117.680426
+          },
+          "southwest": {
+            "lat": 33.6283339,
+            "lng": -117.794755
+          }
+        }
+      },
+      "place_id": "ChIJ1QVFKavC3IARtFPRQcOqMsY",
+      "types": [
+        "postal_code"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "Irvine, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.7736521,
+            "lng": -117.6780258
+          },
+          "southwest": {
+            "lat": 33.5993914,
+            "lng": -117.8687519
+          }
+        },
+        "location": {
+          "lat": 33.6845673,
+          "lng": -117.8265049
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 33.7736521,
+            "lng": -117.6780258
+          },
+          "southwest": {
+            "lat": 33.5993914,
+            "lng": -117.8687519
+          }
+        }
+      },
+      "place_id": "ChIJ40CRaA7d3IAROZpKYHW1eqc",
+      "types": [
+        "locality",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "Orange County, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.94751189999999,
+            "lng": -117.4129869
+          },
+          "southwest": {
+            "lat": 33.33399199999999,
+            "lng": -118.125901
+          }
+        },
+        "location": {
+          "lat": 33.7174708,
+          "lng": -117.8311428
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 33.94751189999999,
+            "lng": -117.4129869
+          },
+          "southwest": {
+            "lat": 33.33399199999999,
+            "lng": -118.125901
+          }
+        }
+      },
+      "place_id": "ChIJz_fVVFyS3IARB9bwj2HDpt4",
+      "types": [
+        "administrative_area_level_2",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "California, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.0095169,
+            "lng": -114.131211
+          },
+          "southwest": {
+            "lat": 32.528832,
+            "lng": -124.482003
+          }
+        },
+        "location": {
+          "lat": 36.778261,
+          "lng": -119.4179324
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.0095169,
+            "lng": -114.131211
+          },
+          "southwest": {
+            "lat": 32.528832,
+            "lng": -124.482003
+          }
+        }
+      },
+      "place_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+      "types": [
+        "administrative_area_level_1",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "United States",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 71.5388001,
+            "lng": -66.885417
+          },
+          "southwest": {
+            "lat": 18.7763,
+            "lng": 170.5957
+          }
+        },
+        "location": {
+          "lat": 37.09024,
+          "lng": -95.712891
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 71.5388001,
+            "lng": -66.885417
+          },
+          "southwest": {
+            "lat": 18.7763,
+            "lng": 170.5957
+          }
+        }
+      },
+      "place_id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+      "types": [
+        "country",
+        "political"
+      ]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "J7M5+XP",
+          "short_name": "J7M5+XP",
+          "types": [
+            "plus_code"
+          ]
+        },
+        {
+          "long_name": "Irvine",
+          "short_name": "Irvine",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Orange County",
+          "short_name": "Orange County",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "J7M5+XP Irvine, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 33.635,
+            "lng": -117.740625
+          },
+          "southwest": {
+            "lat": 33.634875,
+            "lng": -117.74075
+          }
+        },
+        "location": {
+          "lat": 33.6349237,
+          "lng": -117.7406445
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 33.6362864802915,
+            "lng": -117.7393385197085
+          },
+          "southwest": {
+            "lat": 33.6335885197085,
+            "lng": -117.7420364802915
+          }
+        }
+      },
+      "place_id": "GhIJSHoHLkXRQEARll0wuGZvXcA",
+      "plus_code": {
+        "compound_code": "J7M5+XP Irvine, CA, USA",
+        "global_code": "8554J7M5+XP"
+      },
+      "types": [
+        "plus_code"
+      ]
+    }
+  ],
+  "status": "OK"
+}
