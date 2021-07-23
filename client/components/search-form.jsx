@@ -22,7 +22,6 @@ export default class SearchForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    event.target.reset();
     const searchParams = this.state;
     this.props.onSubmit(searchParams);
   }

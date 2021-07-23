@@ -15,35 +15,37 @@ export default class SearchResultList extends React.Component {
       const categoryList = categoryArray.join(', ');
 
       return (
-        <li key={ id } businessid={ alias }>
-          <div className="restaurantContainer row g-0">
-            <div className="imageColumn">
-              <img src={ imageURL } alt="business image" className="searchImage"/>
+        <a key={id} href={`#details?businessId=${alias}`}>
+          <li businessid={ alias }>
+            <div className="restaurantContainer row g-0">
+              <div className="imageColumn">
+                <img src={ imageURL } alt="business image" className="searchImage"/>
+              </div>
+              <div className="textColumn align-items-start">
+                <div className="row g-0">
+                  <p className="restaurantNameText">
+                    { number }. { name }
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantRating">
+                    { rating } <Stars rating={ rating } /> { reviewCount } Reviews
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantCategory">
+                    { price } &#8226; { categoryList }
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantAddress">
+                    { displayAddress }
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="textColumn align-items-start">
-              <div className="row g-0">
-                <p className="restaurantNameText">
-                  { number }. { name }
-                </p>
-              </div>
-              <div className="row g-0">
-                <p className="restaurantRating">
-                  { rating } <Stars rating={ rating } /> { reviewCount } Reviews
-                </p>
-              </div>
-              <div className="row g-0">
-                <p className="restaurantCategory">
-                  { price } &#8226; { categoryList }
-                </p>
-              </div>
-              <div className="row g-0">
-                <p className="restaurantAddress">
-                  { displayAddress }
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
+          </li>
+        </a>
       );
     });
 

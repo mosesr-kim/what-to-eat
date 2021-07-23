@@ -3,6 +3,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .row {
   display: flex;
 }
