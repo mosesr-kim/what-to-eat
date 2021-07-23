@@ -1,0 +1,13 @@
+body {
+  background-color: #363434;
+  font-family: 'Poppins', sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

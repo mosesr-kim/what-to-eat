@@ -1,0 +1,262 @@
+.header {
+  border-bottom: 1px solid #e1dbd1;
+  padding-bottom: 1rem;
+}
+
+.navBarIcon {
+  display: inline-block;
+  font-size: 2rem;
+  color: #e1dbd1;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.navBarIcon:hover {
+  cursor: pointer;
+}
+
+.logo {
+  display: inline-block;
+  width: 10rem;
+  height: 2;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.searchForm {
+  display: flex;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.submitButton {
+  border: none;
+  background-color: #e1dbd1;
+  height: 2.5rem;
+  width: 2rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.searchIcon {
+  color: #363434;
+  background-color: #e1dbd1;
+  font-size: 1rem;
+}
+
+.searchIcon:hover {
+  cursor: pointer;
+}
+
+.restaurantSearchInput,
+.locationSearchInput {
+  width: 18rem;
+  height: 2.5rem;
+  background-color: #e1dbd1;
+  border: none;
+  border-radius: 0.3rem 0 0 0.3rem;
+  text-indent: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1rem;
+  color: #363434;
+}
+
+.locationSearchInput {
+  width: 10rem;
+  height: 2.5rem;
+  border-left: 1px solid #363434;
+  border-radius: 0;
+}
+
+.restaurantSearchInput::placeholder,
+.locationSearchInput::placeholder {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.restaurantSearchInput:focus,
+.locationSearchInput:focus {
+  outline: none;
+}
+
+.searchResultContainer {
+  width: 95%;
+  margin: auto;
+}
+
+.searchResultHeader {
+  margin: 20px 0 20px 40px;
+}
+
+.searchResultHeaderText {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 0.15rem;
+  color: #e8c4b8;
+}
+
+.searchResultList {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.restaurantContainer {
+  flex-wrap: nowrap;
+  background-color: #e1dbd1;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: auto;
+}
+
+.imageColumn {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.searchImage {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 5px;
+  padding: 0;
+  margin: 5px;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  height: 100px;
+  overflow: hidden;
+}
+
+.restaurantNameText,
+.restaurantRating,
+.restaurantCategory,
+.restaurantAddress {
+  padding-left: 10px;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-family: 'poppins', sans-serif;
+}
+
+.restaurantNameText {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #363434;
+}
+
+.restaurantRating {
+  font-weight: 300;
+  font-style: italic;
+  color: #7c7777;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.restaurantCategory {
+  font-style: italic;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  color: #363434;
+}
+
+.restaurantAddress {
+  font-style: italic;
+  color: #7c7777;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
+.imageColumn,
+.textColumn {
+  padding: 0;
+}
+
+@media (min-width: 568px) {
+  .searchResultContainer {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 668px) {
+  .searchResultContainer {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .searchResultContainer {
+    max-width: 70%;
+  }
+
+  .searchImage {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+    padding: 0;
+    margin: 5px;
+  }
+
+  .imageColumn {
+    width: auto;
+  }
+
+  .textColumn {
+    height: 150px;
+    justify-content: space-evenly;
+  }
+
+  .restaurantNameText {
+    font-size: 1.25rem;
+  }
+
+  .restaurantRating,
+  .restaurantCategory,
+  .restaurantAddress {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo {
+    height: 2.5rem;
+    width: 12.5rem;
+  }
+
+  .searchResultContainer {
+    max-width: 60%;
+  }
+
+  .restaurantNameText,
+  .restaurantRating,
+  .restaurantCategory,
+  .restaurantAddress {
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .searchResultContainer {
+    max-width: 50%;
+  }
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
