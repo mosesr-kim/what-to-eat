@@ -14,12 +14,7 @@ export default class Home extends React.Component {
   }
 
   handleSearch(searchParams) {
-    const req = {
-      method: 'GET',
-      headers: searchParams
-    };
-
-    fetch('/api/businesses', req)
+    fetch(`/api/businesses?restaurant=${searchParams.restaurant}&location=${searchParams.location}`)
       .then(response => response.json())
       .then(data => {
         this.setState({

@@ -17,7 +17,7 @@ app.listen(process.env.PORT, () => {
 });
 
 app.get('/api/businesses', (req, res, next) => {
-  const { restaurant, location } = req.headers;
+  const { restaurant, location } = req.query;
 
   if (!restaurant || !location) {
     throw new ClientError(400, 'restaurant and location are required');

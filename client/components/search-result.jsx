@@ -2,16 +2,9 @@ import React from 'react';
 import SearchResultList from './search-result-list';
 
 export default class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     const { searchResults, restaurant, location } = this.props.searchResults;
-    if (searchResults === null) {
-      return null;
-    }
+    if (searchResults === null) return null;
     const noResults = searchResults.error ? 'No results for' : '';
     return (
       <>
