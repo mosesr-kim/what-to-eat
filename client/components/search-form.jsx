@@ -52,7 +52,7 @@ export default class SearchForm extends React.Component {
               name="location"
               className="locationSearchInput"
               id="location"
-              placeholder="city, state or zip"
+              placeholder="location"
               value={this.state.location}
               onChange={this.handleLocationChange}
               required

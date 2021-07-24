@@ -18,6 +18,7 @@
 
 .logo {
   display: inline-block;
+  height: 2.5rem;
   padding: 0;
   margin-top: 1rem;
 }
@@ -62,7 +63,7 @@
 }
 
 .locationSearchInput {
-  width: 10rem;
+  width: 6rem;
   height: 2.5rem;
   border-left: 1px solid #363434;
   border-radius: 0;
