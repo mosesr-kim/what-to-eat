@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewList from '../components/review-list';
 import Stars from '../components/stars';
 
 export default class Details extends React.Component {
@@ -73,6 +74,7 @@ export default class Details extends React.Component {
             </div>
           </div>
         </div>
+        <ReviewList businessReviews={this.state.businessReviews} />
       </>
     );
   }

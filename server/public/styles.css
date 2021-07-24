@@ -199,8 +199,8 @@ li {
 }
 
 .detailsImage {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 5px;
   border: 1px solid #e1dbd1;
@@ -218,6 +218,7 @@ li {
 }
 
 .detailsRating {
+  font-size: 0.9rem;
   font-weight: 300;
   font-style: italic;
   letter-spacing: 0.05rem;
@@ -231,6 +232,51 @@ li {
 .detailsPhoneNumber {
   font-weight: 300;
   letter-spacing: 0.1rem;
+}
+
+.reviewsContainer {
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.reviewHeader {
+  margin-left: 2rem;
+  color: #e8c4b8;
+  font-family: 'raleway', sans-serif;
+}
+
+.reviewHeaderText {
+  font-size: 1.25rem;
+}
+
+.reviewList {
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.reviewLi {
+  background-color: #e1dbd1;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.reviewRating {
+  font-weight: 500;
+  color: #363434;
+  margin-bottom: 0.5rem;
+}
+
+.reviewText {
+  color: #363434;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.stars {
+  color: #7c7777;
 }
 
 @media (min-width: 568px) {
