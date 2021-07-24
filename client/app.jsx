@@ -40,18 +40,18 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <Home location={ this.state } />;
+      return <Home location={this.state} />;
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
-      return <Details businessId={ businessId }/>;
+      return <Details businessId={businessId}/>;
     }
   }
 
   render() {
     return (
       <>
-        { this.renderPage() }
+        {this.renderPage()}
       </>
     );
   }

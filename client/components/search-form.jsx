@@ -36,15 +36,15 @@ export default class SearchForm extends React.Component {
     return (
       <>
         <div className="col-12 col-md-8 d-flex flex-nowrap justify-content-center justify-content-md-start">
-          <form action="" className="searchForm" onSubmit={ this.handleSubmit } autoComplete="off">
+          <form action="" className="searchForm" onSubmit={this.handleSubmit} autoComplete="off">
             <input
               type="text"
               name="restaurant"
               className="restaurantSearchInput"
               id="restaurant"
               placeholder="food, restaurants, businesses..."
-              value={ this.state.restaurant }
-              onChange={ this.handleRestaurantChange }
+              value={this.state.restaurant}
+              onChange={this.handleRestaurantChange}
               required
             />
             <input
@@ -53,8 +53,8 @@ export default class SearchForm extends React.Component {
               className="locationSearchInput"
               id="location"
               placeholder="city, state or zip"
-              value={ this.state.location }
-              onChange={ this.handleLocationChange }
+              value={this.state.location}
+              onChange={this.handleLocationChange}
               required
             />
             <button type="submit" className="submitButton">

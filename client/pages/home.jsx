@@ -28,8 +28,8 @@ export default class Home extends React.Component {
   render() {
     return (
       <>
-        <Header onSubmit={ this.handleSearch } location={ this.props.location } />
-        <SearchResults searchResults={ this.state } />
+        <Header onSubmit={this.handleSearch} location={this.props.location} />
+        <SearchResults searchResults={this.state} />
       </>
     );
   }
