@@ -17,7 +17,7 @@ export default class SearchResultList extends React.Component {
 
       return (
         <a key={id} href={`#details?businessId=${alias}`}>
-          <li businessid={alias}>
+          <li businessid={alias} className="searchResult">
             <div className="restaurantContainer row g-0">
               <div className="imageColumn">
                 <img src={imageURL} alt="business image" className="searchImage"/>
