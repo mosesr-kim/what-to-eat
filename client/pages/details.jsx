@@ -17,7 +17,6 @@ export default class Details extends React.Component {
     fetch(`/api/business?businessId=${this.props.businessId}`)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
         this.setState({
           businessDetails: data.businessDetails,
           businessReviews: data.businessReviews
@@ -28,14 +27,12 @@ export default class Details extends React.Component {
   render() {
     if (!this.state.businessDetails || !this.state.businessReviews) return null;
 
-    // destructure hours for open/closed and photos for carousel
     const { categories, location, name, price, rating, photos } = this.state.businessDetails;
     const phoneNumber = this.state.businessDetails.display_phone;
     const reviewCount = this.state.businessDetails.review_count;
     const displayAddress = location.display_address.join(' ');
     const categoryArray = categories.map(category => category.title);
     const categoryList = categoryArray.join(', ');
-    // const open = hours[0].is_open_now ? 'Open now' : 'Closed now';
 
     return (
       <>
