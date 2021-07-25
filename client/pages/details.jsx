@@ -17,7 +17,6 @@ export default class Details extends React.Component {
     fetch(`/api/business?businessId=${this.props.businessId}`)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
         this.setState({
           businessDetails: data.businessDetails,
           businessReviews: data.businessReviews
