@@ -48,10 +48,11 @@ export default class Details extends React.Component {
               </h2>
             </div>
             <div className="detailsInfo row g-0">
-              <div className="col-6 detailsImageColumn d-flex justify-content-end">
+              <div className="col"></div>
+              <div className="col-6 col-md-5 col-lg-4 col-xl-3 detailsImageColumn d-flex justify-content-end">
                 <img src={imageURL} alt={`photo of ${this.props.businessId}`} className="detailsImage" />
               </div>
-              <div className="col-6 detailsInfoColumn">
+              <div className="col-6 col-md-5 col-lg-4 col-xl-3 detailsInfoColumn">
                 <div className="row detailsCategory g-0">
                   <p>
                     {price} &#8226; {categoryList}
@@ -73,6 +74,7 @@ export default class Details extends React.Component {
                   </p>
                 </div>
               </div>
+              <div className="col"></div>
             </div>
           </div>
         </div>
