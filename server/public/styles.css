@@ -205,6 +205,12 @@ li {
   font-weight: 400;
 }
 
+.detailsImageColumn {
+  padding-right: 0.5rem;
+  width: 220px;
+  height: 220px;
+}
+
 .detailsImage {
   width: 220px;
   height: 220px;
@@ -216,6 +222,7 @@ li {
 
 .detailsInfoColumn {
   color: #e1dbd1;
+  padding-left: 0.5rem;
 }
 
 .detailsCategory {
@@ -325,6 +332,11 @@ li {
     max-width: 90%;
   }
 
+  .detailsImageColumn {
+    width: 250px;
+    height: 250px;
+  }
+
   .detailsImage {
     width: 250px;
     height: 250px;
@@ -339,6 +351,11 @@ li {
 @media (min-width: 668px) {
   .searchResultContainer {
     max-width: 80%;
+  }
+
+  .detailsImageColumn {
+    width: 275px;
+    height: 275px;
   }
 
   .detailsImage {
@@ -391,9 +408,18 @@ li {
     font-size: 1rem;
   }
 
+  .detailsImageColumn {
+    width: 300px;
+    height: 300px;
+  }
+
   .detailsImage {
     width: 300px;
     height: 300px;
+  }
+
+  .reviewsContainer {
+    width: 80%;
   }
 }
 
@@ -414,11 +440,6 @@ li {
     padding-left: 10px;
   }
 
-  .detailsImage {
-    width: 325px;
-    height: 325px;
-  }
-
   .reviewsContainer {
     width: 70%;
   }
@@ -429,13 +450,32 @@ li {
     max-width: 50%;
   }
 
-  .detailsImage {
-    width: 350px;
-    height: 350px;
-  }
-
   .reviewsContainer {
-    width: 35%;
+    width: 65%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .reviewsContainer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .reviewsContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .reviewsContainer {
+    width: 45%;
+  }
+}
+
+@media (min-width: 2300px) {
+  .reviewsContainer {
+    width: 40%;
   }
 }
 

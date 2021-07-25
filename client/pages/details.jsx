@@ -2,6 +2,7 @@ import React from 'react';
 import ReviewList from '../components/review-list';
 import Stars from '../components/stars';
 import HomeButton from '../components/home-button';
+import Carousel from 'react-bootstrap/Carousel';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -28,9 +29,8 @@ export default class Details extends React.Component {
     if (!this.state.businessDetails || !this.state.businessReviews) return null;
 
     // destructure hours for open/closed and photos for carousel
-    const { categories, location, name, price, rating } = this.state.businessDetails;
+    const { categories, location, name, price, rating, photos } = this.state.businessDetails;
     const phoneNumber = this.state.businessDetails.display_phone;
-    const imageURL = this.state.businessDetails.image_url;
     const reviewCount = this.state.businessDetails.review_count;
     const displayAddress = location.display_address.join(' ');
     const categoryArray = categories.map(category => category.title);
@@ -49,8 +49,30 @@ export default class Details extends React.Component {
             </div>
             <div className="detailsInfo row g-0">
               <div className="col"></div>
-              <div className="col-6 col-md-5 col-lg-4 col-xl-3 detailsImageColumn d-flex justify-content-end">
-                <img src={imageURL} alt={`photo of ${this.props.businessId}`} className="detailsImage" />
+              <div className="col-6 col-md-5 col-lg-4 col-xl-3 d-flex justify-content-end">
+                <Carousel fade className="detailsImageColumn">
+                  <Carousel.Item interval={4000}>
+                    <img
+                      className="d-block w-100 detailsImage"
+                      src={photos[0]}
+                      alt="First slide"
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item interval={4000}>
+                    <img
+                      className="d-block w-100 detailsImage"
+                      src={photos[1]}
+                      alt="Second slide"
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item interval={4000}>
+                    <img
+                      className="d-block w-100 detailsImage"
+                      src={photos[2]}
+                      alt="Third slide"
+                    />
+                  </Carousel.Item>
+                </Carousel>
               </div>
               <div className="col-6 col-md-5 col-lg-4 col-xl-3 detailsInfoColumn">
                 <div className="row detailsCategory g-0">
