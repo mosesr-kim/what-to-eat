@@ -3,10 +3,20 @@ const express = require('express');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const jsonMiddleware = express.json();
+const pg = require('pg');
+const db = new pg.Pool({
+  connectionString: 'postgress://dev:dev@localhost/whatToEat',
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.YELP_API_KEY);
 const fetch = require('node-fetch');
 const app = express();
+
+app.use(jsonMiddleware);
 
 app.use(staticMiddleware);
 
@@ -69,4 +79,25 @@ app.get(('/api/business'), (req, res, next) => {
       res.status(200).send({ businessDetails: values[0].jsonBody, businessReviews: values[1].jsonBody });
     })
     .catch(err => next(err));
+});
+
+app.post(('/api/collection'), (req, res, next) => {
+  const { name, userId } = req.body;
+  if (!name || !userId) {
+    throw new ClientError(400, 'name and userId is required');
+  }
+  const sql = `
+  insert into "collections" ("name", "userId")
+  values ($1, $2)
+  returning *;
+  `;
+  const params = [name, userId];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    res.status(201).send(result.rows[0]);
+  })
+    .catch(err => {
+      console.error(err);
+      next(err);
+    });
 });
