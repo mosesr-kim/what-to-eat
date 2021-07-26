@@ -41,7 +41,6 @@ export default class App extends React.Component {
     fetch('/api/collection', init)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
       });
   }
 
