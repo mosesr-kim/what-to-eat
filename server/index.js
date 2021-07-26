@@ -82,22 +82,21 @@ app.get(('/api/business'), (req, res, next) => {
 });
 
 app.post(('/api/collection'), (req, res, next) => {
-  const { name, userId } = req.body;
-  if (!name || !userId) {
-    throw new ClientError(400, 'name and userId is required');
+  const { name } = req.body;
+  if (!name) {
+    throw new ClientError(400, 'name is required');
   }
   const sql = `
-  insert into "collections" ("name", "userId")
-  values ($1, $2)
+  insert into "collections" ("userId", "name")
+  values (1, $1)
   returning *;
   `;
-  const params = [name, userId];
+  const params = [name];
   const dbQuery = db.query(sql, params);
   dbQuery.then(result => {
     res.status(201).send(result.rows[0]);
-  })
-    .catch(err => {
-      console.error(err);
-      next(err);
-    });
+  }).catch(err => {
+    console.error(err);
+    next(err);
+  });
 });
