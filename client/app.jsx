@@ -14,6 +14,7 @@ export default class App extends React.Component {
       route: parseRoute(window.location.hash)
     };
     this.handleSuccess = this.handleSuccess.bind(this);
+    this.handleCreateNewCollection = this.handleCreateNewCollection.bind(this);
   }
 
   handleSuccess(position) {
@@ -26,6 +27,21 @@ export default class App extends React.Component {
           lng: position.coords.longitude,
           zipCode: data
         });
+      });
+  }
+
+  handleCreateNewCollection(collectionName) {
+    const init = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: collectionName })
+    };
+    fetch('/api/collection', init)
+      .then(response => response.json())
+      .then(data => {
+        // console.log(data);
       });
   }
 
@@ -45,10 +61,10 @@ export default class App extends React.Component {
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
-      return <Details businessId={businessId}/>;
+      return <Details businessId={businessId} />;
     }
     if (route.path === 'newCollection') {
-      return <NewCollection />;
+      return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} />;
     }
   }
 
