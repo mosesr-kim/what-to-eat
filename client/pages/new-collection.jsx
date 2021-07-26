@@ -42,7 +42,7 @@ export default class NewCollection extends React.Component {
             name="newCollection"
             className="newCollectionInput"
             id="newCollection"
-            placeholder="Best Ramen Shops, Favorite Boba..."
+            placeholder="Best Ramen Shops, Favorite Boba Spots..."
             value={this.state.name}
             onChange={this.handleNameChange}
             required
