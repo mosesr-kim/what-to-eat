@@ -329,7 +329,7 @@ li {
 
 .appDrawerBackground {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -341,7 +341,7 @@ li {
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 2;
+  z-index: 101;
   top: 0;
   left: 0;
   height: 100%;
@@ -455,6 +455,10 @@ li {
     font-size: 1rem;
     letter-spacing: 0.1rem;
   }
+
+  .appDrawer {
+    width: 45%;
+  }
 }
 
 @media (min-width: 668px) {
@@ -481,6 +485,10 @@ li {
   .detailsAddress,
   .detailsPhoneNumber {
     font-size: 1.25rem;
+  }
+
+  .appDrawer {
+    width: 40%;
   }
 }
 
@@ -530,6 +538,10 @@ li {
   .reviewsContainer {
     width: 80%;
   }
+
+  .appDrawer {
+    width: 35%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -552,6 +564,10 @@ li {
   .reviewsContainer {
     width: 70%;
   }
+
+  .appDrawer {
+    width: 30%;
+  }
 }
 
 @media (min-width: 1140px) {
@@ -561,6 +577,10 @@ li {
 
   .reviewsContainer {
     width: 65%;
+  }
+
+  .appDrawer {
+    width: 25%;
   }
 }
 
