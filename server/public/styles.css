@@ -13,12 +13,12 @@
 
 .navBarIcon:hover {
   cursor: pointer;
+  color: #e8c4b8;
 }
 
 .logo {
   display: inline-block;
-  width: 10rem;
-  height: 2;
+  height: 2.5rem;
   padding: 0;
   margin-top: 1rem;
 }
@@ -45,6 +45,7 @@
 
 .searchIcon:hover {
   cursor: pointer;
+  color: #e8c4b8;
 }
 
 .restaurantSearchInput,
@@ -62,7 +63,7 @@
 }
 
 .locationSearchInput {
-  width: 10rem;
+  width: 6rem;
   height: 2.5rem;
   border-left: 1px solid #363434;
   border-radius: 0;
@@ -105,12 +106,18 @@ li {
   list-style-type: none;
 }
 
-.restaurantContainer {
-  flex-wrap: nowrap;
+.searchResult {
   background-color: #e1dbd1;
   margin-bottom: 10px;
   border-radius: 5px;
-  height: auto;
+}
+
+.searchResult:hover {
+  filter: brightness(95%);
+}
+
+.restaurantContainer {
+  flex-wrap: nowrap;
 }
 
 .imageColumn {
@@ -180,15 +187,191 @@ li {
   padding: 0;
 }
 
+.details {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.detailsContainer {
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.detailsHeaderText {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: #e1dbd1;
+  font-weight: 400;
+}
+
+.detailsImageColumn {
+  padding-right: 0.5rem;
+  width: 220px;
+  height: 220px;
+}
+
+.detailsImage {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #e1dbd1;
+  margin-right: 10px;
+}
+
+.detailsInfoColumn {
+  color: #e1dbd1;
+  padding-left: 0.5rem;
+}
+
+.detailsCategory {
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+}
+
+.detailsRating {
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.05rem;
+}
+
+.detailsAddress {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.detailsPhoneNumber {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.reviewsContainer {
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.reviewHeader {
+  margin-left: 2rem;
+  color: #e8c4b8;
+  font-family: 'raleway', sans-serif;
+}
+
+.reviewHeaderText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.reviewList {
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.reviewLi {
+  background-color: #e1dbd1;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.reviewRating {
+  font-weight: 500;
+  color: #363434;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.reviewText {
+  font-size: 0.8rem;
+  color: #363434;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 0;
+  letter-spacing: 0.1rem;
+}
+
+.stars {
+  color: #7c7777;
+}
+
+.homeButton {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+.leftChevron {
+  font-size: 2rem;
+}
+
+.homeButtonText {
+  display: inline;
+  font-family: 'raleway', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+
+.homeButtonAnchor {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  color: #e1dbd1;
+}
+
+.homeButtonAnchor:hover {
+  color: #e8c4b8;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
+  }
+
+  .detailsImageColumn {
+    width: 250px;
+    height: 250px;
+  }
+
+  .detailsImage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .detailsRating {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
   }
 }
 
 @media (min-width: 668px) {
   .searchResultContainer {
     max-width: 80%;
+  }
+
+  .detailsImageColumn {
+    width: 275px;
+    height: 275px;
+  }
+
+  .detailsImage {
+    width: 275px;
+    height: 275px;
+  }
+
+  .reviewsContainer {
+    width: 90%;
+  }
+
+  .detailsCategory,
+  .detailsRating,
+  .detailsAddress,
+  .detailsPhoneNumber {
+    font-size: 1.25rem;
   }
 }
 
@@ -224,6 +407,20 @@ li {
   .restaurantAddress {
     font-size: 1rem;
   }
+
+  .detailsImageColumn {
+    width: 300px;
+    height: 300px;
+  }
+
+  .detailsImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .reviewsContainer {
+    width: 80%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -242,11 +439,43 @@ li {
   .restaurantAddress {
     padding-left: 10px;
   }
+
+  .reviewsContainer {
+    width: 70%;
+  }
 }
 
 @media (min-width: 1140px) {
   .searchResultContainer {
     max-width: 50%;
+  }
+
+  .reviewsContainer {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .reviewsContainer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .reviewsContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .reviewsContainer {
+    width: 45%;
+  }
+}
+
+@media (min-width: 2300px) {
+  .reviewsContainer {
+    width: 40%;
   }
 }
 

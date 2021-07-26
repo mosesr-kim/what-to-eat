@@ -17,7 +17,7 @@ app.listen(process.env.PORT, () => {
   console.log(`express server listening on port ${process.env.PORT}`);
 });
 
-app.get('/api/businesses', (req, res, next) => {
+app.get('/api/search', (req, res, next) => {
   const { restaurant, location } = req.query;
 
   if (!restaurant || !location) {
@@ -53,6 +53,20 @@ app.get(('/api/location'), (req, res, next) => {
         }
       }
       res.status(200).send(zipCode);
+    })
+    .catch(err => next(err));
+});
+
+app.get(('/api/business'), (req, res, next) => {
+  const { businessId } = req.query;
+  if (!businessId) {
+    throw new ClientError(400, 'businessId is required');
+  }
+  const businessDetails = client.business(businessId);
+  const businessReviews = client.reviews(businessId);
+  Promise.all([businessDetails, businessReviews])
+    .then(values => {
+      res.status(200).send({ businessDetails: values[0].jsonBody, businessReviews: values[1].jsonBody });
     })
     .catch(err => next(err));
 });

@@ -14,7 +14,7 @@ export default class Home extends React.Component {
   }
 
   handleSearch(searchParams) {
-    fetch(`/api/businesses?restaurant=${searchParams.restaurant}&location=${searchParams.location}`)
+    fetch(`/api/search?restaurant=${searchParams.restaurant}&location=${searchParams.location}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -28,8 +28,8 @@ export default class Home extends React.Component {
   render() {
     return (
       <>
-        <Header onSubmit={ this.handleSearch } location={ this.props.location } />
-        <SearchResults searchResults={ this.state } />
+        <Header onSubmit={this.handleSearch} location={this.props.location} />
+        <SearchResults searchResults={this.state} />
       </>
     );
   }

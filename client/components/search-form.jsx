@@ -22,7 +22,6 @@ export default class SearchForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    event.target.reset();
     const searchParams = this.state;
     this.props.onSubmit(searchParams);
   }
@@ -37,15 +36,15 @@ export default class SearchForm extends React.Component {
     return (
       <>
         <div className="col-12 col-md-8 d-flex flex-nowrap justify-content-center justify-content-md-start">
-          <form action="" className="searchForm" onSubmit={ this.handleSubmit } autoComplete="off">
+          <form action="" className="searchForm" onSubmit={this.handleSubmit} autoComplete="off">
             <input
               type="text"
               name="restaurant"
               className="restaurantSearchInput"
               id="restaurant"
               placeholder="food, restaurants, businesses..."
-              value={ this.state.restaurant }
-              onChange={ this.handleRestaurantChange }
+              value={this.state.restaurant}
+              onChange={this.handleRestaurantChange}
               required
             />
             <input
@@ -53,9 +52,9 @@ export default class SearchForm extends React.Component {
               name="location"
               className="locationSearchInput"
               id="location"
-              placeholder="city, state or zip"
-              value={ this.state.location }
-              onChange={ this.handleLocationChange }
+              placeholder="location"
+              value={this.state.location}
+              onChange={this.handleLocationChange}
               required
             />
             <button type="submit" className="submitButton">
