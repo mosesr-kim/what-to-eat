@@ -27,11 +27,16 @@ export default class NewCollection extends React.Component {
         <AppDrawer />
         <div className="newCollectionContainer">
           <div className="newCollectionHeader">
-            <h2 className="NewCollectionHeaderText">
+            <h2 className="newCollectionHeaderText">
               New Collection
             </h2>
           </div>
           <form action="" className="newCollectionForm" autoComplete="off" onSubmit={this.handleSubmit}>
+            <div>
+              <label htmlFor="newCollection" className="newCollectionLabel">
+                Collection Name
+              </label>
+            </div>
             <input
             type="text"
             name="newCollection"
@@ -42,6 +47,16 @@ export default class NewCollection extends React.Component {
             onChange={this.handleNameChange}
             required
             />
+            <div>
+              <label htmlFor="newCollection" className="newCollectionDescription">
+                Create a new Collection to save your favorite restaurants
+              </label>
+            </div>
+            <div className="newCollectionButtonContainer">
+              <button type="submit" className="newCollectionButton">
+                Save
+              </button>
+            </div>
           </form>
         </div>
       </>

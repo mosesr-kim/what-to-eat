@@ -364,6 +364,78 @@ li {
   letter-spacing: 0.1rem;
 }
 
+.newCollectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.newCollectionHeaderText {
+  font-family: 'raleway', sans-serif;
+  color: #e1dbd1;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.newCollectionLabel {
+  font-family: 'raleway', sans-serif;
+  color: #e8c4b8;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.newCollectionInput {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 5px;
+  text-indent: 0.5rem;
+  background-color: #e1dbd1;
+  font-family: 'raleway', sans-serif;
+  color: #363434;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.newCollectionInput::placeholder {
+  font-family: 'raleway', sans-serif;
+  color: #7c7777;
+  font-size: 1rem;
+}
+
+.newCollectionInput:focus {
+  outline: none;
+}
+
+.newCollectionDescription {
+  color: #e1dbd1;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.newCollectionButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newCollectionButton {
+  border: none;
+  color: #363434;
+  background-color: #e8c4b8;
+  font-family: 'poppins', sans-serif;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  width: 4.5rem;
+  height: 2rem;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;

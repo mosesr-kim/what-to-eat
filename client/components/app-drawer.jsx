@@ -22,7 +22,9 @@ export default class AppDrawer extends React.Component {
           <div className="createNewCollectionLink">
             <a href="#newCollection">
               <i className="fas fa-plus plusIcon"></i>
-              <p className="createNewCollectionText">Create a new Collection</p>
+              <p className="createNewCollectionText">
+                Create a new Collection
+              </p>
             </a>
           </div>
         </div>
