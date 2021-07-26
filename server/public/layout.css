@@ -3,6 +3,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
 a {
   text-decoration: none;
 }

@@ -24,6 +24,7 @@ export default class SearchForm extends React.Component {
     event.preventDefault();
     const searchParams = this.state;
     this.props.onSubmit(searchParams);
+    this.setState({ restaurant: '' });
   }
 
   componentDidUpdate(prevProps) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchForm from './search-form';
+import AppDrawer from './app-drawer';
 
 export default class Header extends React.Component {
   render() {
@@ -7,7 +8,8 @@ export default class Header extends React.Component {
       <>
         <div className="header row g-0">
           <div className="col-1">
-            <i className="fas fa-bars navBarIcon"></i>
+            {/* <i className="fas fa-bars navBarIcon"></i> */}
+            <AppDrawer />
           </div>
           <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
             <img src="logo.svg" alt="what to eat logo" className="logo" />

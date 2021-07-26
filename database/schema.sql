@@ -5,3 +5,27 @@ set client_min_messages to warning;
 drop schema "public" cascade;
 
 create schema "public";
+
+CREATE TABLE "public"."users" (
+	"userId" serial NOT NULL,
+  "createdAt" timestamp(6) with time zone NOT NULL default now(),
+	CONSTRAINT "users_pk" PRIMARY KEY ("userId")
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+CREATE TABLE "public"."collections" (
+	"collectionId" serial NOT NULL,
+	"userId" integer NOT NULL,
+  "name" TEXT NOT NULL,
+  "createdAt" timestamp(6) with time zone NOT NULL default now(),
+	CONSTRAINT "collections_pk" PRIMARY KEY ("collectionId")
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+ALTER TABLE "collections" ADD CONSTRAINT "collections_fk0" FOREIGN KEY ("userId") REFERENCES "users"("userId");

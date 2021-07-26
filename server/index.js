@@ -3,19 +3,24 @@ const express = require('express');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const jsonMiddleware = express.json();
+const pg = require('pg');
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.YELP_API_KEY);
 const fetch = require('node-fetch');
+
+const db = new pg.Pool({
+  connectionString: 'postgress://dev:dev@localhost/whatToEat',
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
 const app = express();
 
+app.use(jsonMiddleware);
+
 app.use(staticMiddleware);
-
-app.use(errorMiddleware);
-
-app.listen(process.env.PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`express server listening on port ${process.env.PORT}`);
-});
 
 app.get('/api/search', (req, res, next) => {
   const { restaurant, location } = req.query;
@@ -69,4 +74,30 @@ app.get(('/api/business'), (req, res, next) => {
       res.status(200).send({ businessDetails: values[0].jsonBody, businessReviews: values[1].jsonBody });
     })
     .catch(err => next(err));
+});
+
+app.post(('/api/collection'), (req, res, next) => {
+  const { name } = req.body;
+  if (!name) {
+    throw new ClientError(400, 'name is required');
+  }
+  const sql = `
+  insert into "collections" ("userId", "name")
+  values (1, $1)
+  returning *;
+  `;
+  const params = [name];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    res.status(201).send(result.rows[0]);
+  }).catch(err => {
+    next(err);
+  });
+});
+
+app.use(errorMiddleware);
+
+app.listen(process.env.PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`express server listening on port ${process.env.PORT}`);
 });
