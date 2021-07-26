@@ -2,6 +2,7 @@ import React from 'react';
 import parseRoute from './lib/parse-route';
 import Home from './pages/home';
 import Details from './pages/details';
+import NewCollection from './pages/new-collection';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -45,6 +46,9 @@ export default class App extends React.Component {
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
       return <Details businessId={businessId}/>;
+    }
+    if (route.path === 'newCollection') {
+      return <NewCollection />;
     }
   }
 

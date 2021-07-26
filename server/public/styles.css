@@ -338,6 +338,8 @@ li {
 }
 
 .appDrawer {
+  display: flex;
+  justify-content: center;
   position: fixed;
   z-index: 2;
   top: 0;
@@ -345,6 +347,21 @@ li {
   height: 100%;
   width: 50%;
   background-color: #363434;
+  padding-top: 2rem;
+}
+
+.plusIcon {
+  color: #e8c4b8;
+  font-size: 1rem;
+}
+
+.createNewCollectionText {
+  display: inline-block;
+  font-family: 'raleway', sans-serif;
+  color: #e1dbd1;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
 }
 
 @media (min-width: 568px) {
