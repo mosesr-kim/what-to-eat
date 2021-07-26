@@ -327,6 +327,26 @@ li {
   color: #e8c4b8;
 }
 
+.appDrawerBackground {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.appDrawer {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #363434;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;

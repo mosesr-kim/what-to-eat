@@ -1,8 +1,8 @@
 import React from 'react';
 import ReviewList from '../components/review-list';
 import Stars from '../components/stars';
-import HomeButton from '../components/home-button';
 import Carousel from 'react-bootstrap/Carousel';
+import AppDrawer from '../components/app-drawer';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export default class Details extends React.Component {
 
     return (
       <>
-        <HomeButton />
+        <AppDrawer />
         <div className="details">
           <div className="detailsContainer">
             <div className="detailsHeader row g-0">

@@ -5,27 +5,22 @@ const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
 const jsonMiddleware = express.json();
 const pg = require('pg');
+const yelp = require('yelp-fusion');
+const client = yelp.client(process.env.YELP_API_KEY);
+const fetch = require('node-fetch');
+
 const db = new pg.Pool({
   connectionString: 'postgress://dev:dev@localhost/whatToEat',
   ssl: {
     rejectUnauthorized: false
   }
 });
-const yelp = require('yelp-fusion');
-const client = yelp.client(process.env.YELP_API_KEY);
-const fetch = require('node-fetch');
+
 const app = express();
 
 app.use(jsonMiddleware);
 
 app.use(staticMiddleware);
-
-app.use(errorMiddleware);
-
-app.listen(process.env.PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`express server listening on port ${process.env.PORT}`);
-});
 
 app.get('/api/search', (req, res, next) => {
   const { restaurant, location } = req.query;
@@ -96,7 +91,13 @@ app.post(('/api/collection'), (req, res, next) => {
   dbQuery.then(result => {
     res.status(201).send(result.rows[0]);
   }).catch(err => {
-    console.error(err);
     next(err);
   });
+});
+
+app.use(errorMiddleware);
+
+app.listen(process.env.PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`express server listening on port ${process.env.PORT}`);
 });
