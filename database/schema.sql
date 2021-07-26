@@ -28,4 +28,16 @@ CREATE TABLE "public"."collections" (
 
 
 
+CREATE TABLE "public"."restaurants" (
+	"collectionId" integer NOT NULL,
+	"businessId" TEXT NOT NULL,
+	"createdAt" timestamp(6) with time zone NOT NULL default now()
+) WITH (
+  OIDS=FALSE
+);
+
+
+
 ALTER TABLE "collections" ADD CONSTRAINT "collections_fk0" FOREIGN KEY ("userId") REFERENCES "users"("userId");
+
+ALTER TABLE "restaurants" ADD CONSTRAINT "restaurants_fk0" FOREIGN KEY ("collectionId") REFERENCES "collections"("collectionId");
