@@ -345,7 +345,7 @@ li {
   top: 0;
   left: 0;
   height: 100%;
-  width: 50%;
+  width: 275px;
   background-color: #363434;
   padding-top: 2rem;
 }
@@ -362,6 +362,10 @@ li {
   margin-left: 0.5rem;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+}
+
+.newCollectionLink:hover {
+  filter: brightness(80%);
 }
 
 .newCollectionContainer {
@@ -436,6 +440,10 @@ li {
   height: 2rem;
 }
 
+.newCollectionButton:hover {
+  filter: brightness(95%);
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
@@ -454,10 +462,6 @@ li {
   .detailsRating {
     font-size: 1rem;
     letter-spacing: 0.1rem;
-  }
-
-  .appDrawer {
-    width: 45%;
   }
 }
 
@@ -485,10 +489,6 @@ li {
   .detailsAddress,
   .detailsPhoneNumber {
     font-size: 1.25rem;
-  }
-
-  .appDrawer {
-    width: 40%;
   }
 }
 
@@ -538,10 +538,6 @@ li {
   .reviewsContainer {
     width: 80%;
   }
-
-  .appDrawer {
-    width: 35%;
-  }
 }
 
 @media (min-width: 992px) {
@@ -564,10 +560,6 @@ li {
   .reviewsContainer {
     width: 70%;
   }
-
-  .appDrawer {
-    width: 30%;
-  }
 }
 
 @media (min-width: 1140px) {
@@ -577,10 +569,6 @@ li {
 
   .reviewsContainer {
     width: 65%;
-  }
-
-  .appDrawer {
-    width: 25%;
   }
 }
 

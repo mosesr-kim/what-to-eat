@@ -20,7 +20,7 @@ export default class AppDrawer extends React.Component {
         <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
-            <a href="#newCollection">
+            <a href="#newCollection" onClick={this.handleClick} className="newCollectionLink">
               <i className="fas fa-plus plusIcon"></i>
               <p className="createNewCollectionText">
                 Create a new Collection
