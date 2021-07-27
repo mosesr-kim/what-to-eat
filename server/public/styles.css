@@ -444,6 +444,10 @@ li {
   filter: brightness(95%);
 }
 
+.bookmark {
+  color: #e8c4b8;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;

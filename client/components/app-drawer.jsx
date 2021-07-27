@@ -1,4 +1,5 @@
 import React from 'react';
+import Bookmark from './bookmark';
 
 export default class AppDrawer extends React.Component {
   constructor(props) {
@@ -17,7 +18,10 @@ export default class AppDrawer extends React.Component {
     const open = this.state.isOpen ? '' : 'hidden';
     return (
       <>
-        <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
+        <div className="navBar">
+          <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
+          <Bookmark />
+        </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
             <a href="#newCollection" onClick={this.handleClick} className="newCollectionLink">
