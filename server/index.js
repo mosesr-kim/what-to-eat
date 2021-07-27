@@ -90,9 +90,7 @@ app.post(('/api/collection'), (req, res, next) => {
   const dbQuery = db.query(sql, params);
   dbQuery.then(result => {
     res.status(201).send(result.rows[0]);
-  }).catch(err => {
-    next(err);
-  });
+  }).catch(err => next(err));
 });
 
 app.post(('/api/restaurant'), (req, res, next) => {
@@ -100,7 +98,21 @@ app.post(('/api/restaurant'), (req, res, next) => {
   if (!collectionId || !businessId) {
     throw new ClientError(400, 'collectionId and businessId are required');
   }
-  // console.log(collectionId, businessId);
+  client.business(businessId)
+    .then(response => {
+      const json = response.jsonBody;
+      const sql = `
+      insert into "restaurants" ("collectionId", "businessId", "json")
+      values ($1, $2, $3)
+      returning *;
+      `;
+      const params = [collectionId, businessId, json];
+      const dbQuery = db.query(sql, params);
+      dbQuery.then(result => {
+        res.status(201).send(result.rows[0]);
+      }).catch(err => next(err));
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);
