@@ -36,7 +36,7 @@ export default class Details extends React.Component {
 
     return (
       <>
-        <AppDrawer />
+        <AppDrawer route={this.props.route} />
         <div className="details">
           <div className="detailsContainer">
             <div className="detailsHeader row g-0">

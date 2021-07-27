@@ -60,7 +60,7 @@ export default class App extends React.Component {
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
-      return <Details businessId={businessId} />;
+      return <Details businessId={businessId} route={this.state.route} />;
     }
     if (route.path === 'newCollection') {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} />;

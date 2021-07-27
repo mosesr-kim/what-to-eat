@@ -20,7 +20,7 @@ export default class AppDrawer extends React.Component {
       <>
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
-          <Bookmark />
+          <Bookmark route={this.props.route} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
