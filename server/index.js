@@ -115,6 +115,19 @@ app.post(('/api/restaurant'), (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get(('/api/collections'), (req, res, next) => {
+  const sql = `
+  select "name"
+    from "collections"
+   where "userId" = $1;
+  `;
+  const params = [1];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    res.status(200).send(result.rows);
+  }).catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

@@ -7,7 +7,9 @@ export default class CollectionList extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('mounted');
+    fetch('/api/collections')
+      .then(response => response.json());
+    // .then(data => console.log(data));
   }
 
   render() {
