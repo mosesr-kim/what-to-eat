@@ -31,6 +31,7 @@ CREATE TABLE "public"."collections" (
 CREATE TABLE "public"."restaurants" (
 	"collectionId" integer NOT NULL,
 	"businessId" TEXT NOT NULL,
+  "json" json NOT NULL,
 	"createdAt" timestamp(6) with time zone NOT NULL default now()
 ) WITH (
   OIDS=FALSE
