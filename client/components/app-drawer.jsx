@@ -1,17 +1,24 @@
 import React from 'react';
 import Bookmark from './bookmark';
+import CollectionList from './collection-list';
 
 export default class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      adding: false
     };
     this.handleClick = this.handleClick.bind(this);
+    this.addRestaurant = this.addRestaurant.bind(this);
   }
 
   handleClick() {
     this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  addRestaurant() {
+    this.setState({ isOpen: true, isAdding: true });
   }
 
   render() {
@@ -20,7 +27,7 @@ export default class AppDrawer extends React.Component {
       <>
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
-          <Bookmark route={this.props.route} />
+          <Bookmark route={this.props.route} addRestaurant={this.addRestaurant} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
@@ -31,6 +38,7 @@ export default class AppDrawer extends React.Component {
               </p>
             </a>
           </div>
+          <CollectionList adding={this.state.adding} />
         </div>
         <div className={`appDrawerBackground ${open}`} onClick={this.handleClick}></div>
       </>

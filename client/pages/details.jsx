@@ -33,10 +33,9 @@ export default class Details extends React.Component {
     const displayAddress = location.display_address.join(' ');
     const categoryArray = categories.map(category => category.title);
     const categoryList = categoryArray.join(', ');
-
     return (
       <>
-        <AppDrawer route={this.props.route} />
+        <AppDrawer route={this.props.route} businessId={this.props.businessId} />
         <div className="details">
           <div className="detailsContainer">
             <div className="detailsHeader row g-0">

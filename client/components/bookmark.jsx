@@ -6,11 +6,14 @@ export default class Bookmark extends React.Component {
     this.state = {
       saved: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
-  handleClick() {
-    this.state.saved ? this.setState({ saved: !this.state.saved }) : this.setState({ saved: !this.state.saved });
+  handleAdd() {
+    if (this.state.saved === false) {
+      this.setState({ saved: true });
+      this.props.addRestaurant();
+    }
   }
 
   render() {
@@ -19,7 +22,7 @@ export default class Bookmark extends React.Component {
         const saved = this.state.saved ? 'fas fa-bookmark' : 'far fa-bookmark';
         return (
           <>
-            <i className={`${saved} bookmark`} onClick={this.handleClick}></i>
+            <i className={`${saved} bookmark`} onClick={this.handleAdd}></i>
           </>
         );
       }

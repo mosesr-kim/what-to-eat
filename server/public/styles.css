@@ -446,6 +446,15 @@ li {
 
 .bookmark {
   color: #e8c4b8;
+  font-size: 1.75rem;
+  margin-top: 15px;
+  margin-right: 25px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (min-width: 568px) {
