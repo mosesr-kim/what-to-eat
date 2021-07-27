@@ -22,7 +22,7 @@ app.use(jsonMiddleware);
 
 app.use(staticMiddleware);
 
-app.get('/api/search', (req, res, next) => {
+app.get(('/api/search'), (req, res, next) => {
   const { restaurant, location } = req.query;
 
   if (!restaurant || !location) {
@@ -93,6 +93,14 @@ app.post(('/api/collection'), (req, res, next) => {
   }).catch(err => {
     next(err);
   });
+});
+
+app.post(('/api/restaurant'), (req, res, next) => {
+  const { collectionId, businessId } = req.body;
+  if (!collectionId || !businessId) {
+    throw new ClientError(400, 'collectionId and businessId are required');
+  }
+  // console.log(collectionId, businessId);
 });
 
 app.use(errorMiddleware);
