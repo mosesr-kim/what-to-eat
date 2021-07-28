@@ -38,10 +38,7 @@ export default class App extends React.Component {
       },
       body: JSON.stringify({ name: collectionName })
     };
-    fetch('/api/collection', init)
-      .then(response => response.json())
-      .then(data => {
-      });
+    fetch('/api/collection', init);
   }
 
   componentDidMount() {
