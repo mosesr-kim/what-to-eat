@@ -498,11 +498,26 @@ li {
 }
 
 .collectionNameText {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .collectionCountText {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.saveButton {
+  position: absolute;
+  right: 1rem;
+  border: none;
+  background-color: #e8c4b8;
+  color: #363434;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.saveButton:hover {
+  filter: brightness(95%);
 }
 
 @media (min-width: 568px) {

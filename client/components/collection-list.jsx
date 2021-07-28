@@ -1,4 +1,5 @@
 import React from 'react';
+import SaveButton from './save-button';
 
 export default class CollectionList extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export default class CollectionList extends React.Component {
               {collection.count} places saved
             </h3>
           </div>
+          <SaveButton />
         </li>
       );
     });
