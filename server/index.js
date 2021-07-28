@@ -115,18 +115,25 @@ app.post(('/api/restaurant'), (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get(('/api/collections'), (req, res, next) => {
-  const sql = `
-  select "name"
-    from "collections"
-   where "userId" = $1;
-  `;
-  const params = [1];
-  const dbQuery = db.query(sql, params);
-  dbQuery.then(result => {
-    res.status(200).send(result.rows);
-  }).catch(err => next(err));
-});
+// app.get(('/api/collections'), (req, res, next) => {
+//   const sql = `
+//   select "c"."name",
+//          "c"."collectionId",
+//          "r"."json",
+//          "r"."businessId",
+//          count ("r"."collectionId")
+//     from "collections" as "c"
+//     left join "restaurants" as "r" on "r"."collectionId" = "c"."collectionId"
+//    where "userId" = $1
+//    group by "c"."collectionId";
+//   `;
+
+//   const params = [1];
+//   const dbQuery = db.query(sql, params);
+//   dbQuery.then(result => {
+//     res.status(200).send(result.rows);
+//   }).catch(err => next(err));
+// });
 
 app.use(errorMiddleware);
 

@@ -339,7 +339,8 @@ li {
 
 .appDrawer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   z-index: 101;
   top: 0;
@@ -353,6 +354,11 @@ li {
 .plusIcon {
   color: #e8c4b8;
   font-size: 1rem;
+}
+
+.createNewCollectionLink {
+  display: flex;
+  justify-content: center;
 }
 
 .createNewCollectionText {

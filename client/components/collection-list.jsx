@@ -6,11 +6,11 @@ export default class CollectionList extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    fetch('/api/collections')
-      .then(response => response.json());
-    // .then(data => console.log(data));
-  }
+  // componentDidMount() {
+  //   fetch('/api/collections')
+  //     .then(response => response.json())
+  //     .then(collections => collections);
+  // }
 
   render() {
     return (
