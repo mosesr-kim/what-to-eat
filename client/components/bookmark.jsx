@@ -12,7 +12,7 @@ export default class Bookmark extends React.Component {
   handleAdd() {
     if (this.state.saved === false) {
       this.setState({ saved: true });
-      this.props.addRestaurant();
+      this.props.openDrawer();
     }
   }
 

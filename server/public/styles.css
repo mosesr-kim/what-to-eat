@@ -463,6 +463,29 @@ li {
   align-items: center;
 }
 
+.collectionList {
+  padding: 0 10px 0 10px;
+}
+
+.collectionLi {
+  display: flex;
+  border-radius: 5px;
+  background-color: #e1dbd1;
+  margin-bottom: 10px;
+}
+
+.collectionImageColumn {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+
+.collectionImage {
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #e1dbd1;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;

@@ -111,29 +111,36 @@ app.post(('/api/restaurant'), (req, res, next) => {
       dbQuery.then(result => {
         res.status(201).send(result.rows[0]);
       }).catch(err => next(err));
+      const setImageSQL = `
+        update "collections"
+           set "image" = coalesce("image", $1)
+         where "collectionId" = $2
+      `;
+      const setImageParams = [json.image_url, collectionId];
+      const dbQueryImage = db.query(setImageSQL, setImageParams);
+      dbQueryImage.then()
+        .catch(err => next(err));
     })
     .catch(err => next(err));
 });
 
-// app.get(('/api/collections'), (req, res, next) => {
-//   const sql = `
-//   select "c"."name",
-//          "c"."collectionId",
-//          "r"."json",
-//          "r"."businessId",
-//          count ("r"."collectionId")
-//     from "collections" as "c"
-//     left join "restaurants" as "r" on "r"."collectionId" = "c"."collectionId"
-//    where "userId" = $1
-//    group by "c"."collectionId";
-//   `;
-
-//   const params = [1];
-//   const dbQuery = db.query(sql, params);
-//   dbQuery.then(result => {
-//     res.status(200).send(result.rows);
-//   }).catch(err => next(err));
-// });
+app.get(('/api/collections'), (req, res, next) => {
+  const sql = `
+  select "c"."name",
+         "c"."collectionId",
+         "c"."image",
+         count ("r"."collectionId")
+    from "collections" as "c"
+    left join "restaurants" as "r" on "r"."collectionId" = "c"."collectionId"
+   where "userId" = $1
+   group by "c"."collectionId";
+  `;
+  const params = [1];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    res.status(200).send(result.rows);
+  }).catch(err => next(err));
+});
 
 app.use(errorMiddleware);
 

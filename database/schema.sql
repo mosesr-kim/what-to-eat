@@ -20,6 +20,7 @@ CREATE TABLE "public"."collections" (
 	"collectionId" serial NOT NULL,
 	"userId" integer NOT NULL,
   "name" TEXT NOT NULL,
+  "image" TEXT,
   "createdAt" timestamp(6) with time zone NOT NULL default now(),
 	CONSTRAINT "collections_pk" PRIMARY KEY ("collectionId")
 ) WITH (

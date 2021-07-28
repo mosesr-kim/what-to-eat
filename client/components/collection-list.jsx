@@ -6,16 +6,30 @@ export default class CollectionList extends React.Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   fetch('/api/collections')
-  //     .then(response => response.json())
-  //     .then(collections => collections);
-  // }
-
   render() {
+    if (!this.props.collections) return null;
+    const collectionList = this.props.collections.map((collection, index) => {
+      return (
+        <>
+          <li key={collection.collectionId} className="collectionLi">
+            <div className="collectionImageColumn">
+              <img src={collection.image} alt={`${collection.name} image`} className="collectionImage" />
+            </div>
+            <div className="collectionTextColumn">
+              <h3 className="collectionNameText">
+                {collection.name}
+              </h3>
+              <h3 className="collectionCountText">
+                {collection.count} places saved
+              </h3>
+            </div>
+          </li>
+        </>
+      );
+    });
     return (
       <>
-        <ul className="collectionList"></ul>
+        <ul className="collectionList">{collectionList}</ul>
       </>
     );
   }

@@ -7,18 +7,25 @@ export default class AppDrawer extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      adding: false
+      saving: null,
+      collections: null
     };
     this.handleClick = this.handleClick.bind(this);
-    this.addRestaurant = this.addRestaurant.bind(this);
+    this.openDrawer = this.openDrawer.bind(this);
   }
 
-  handleClick() {
-    this.setState({ isOpen: !this.state.isOpen });
+  handleClick(event) {
+    this.setState({ isOpen: !this.state.isOpen, saving: null });
+    fetch('/api/collections')
+      .then(response => response.json())
+      .then(data => this.setState({ collections: data }));
   }
 
-  addRestaurant() {
-    this.setState({ isOpen: true, isAdding: true });
+  openDrawer(event) {
+    this.setState({ isOpen: true, saving: this.props.businessId });
+    fetch('/api/collections')
+      .then(response => response.json())
+      .then(data => this.setState({ collections: data }));
   }
 
   render() {
@@ -27,7 +34,7 @@ export default class AppDrawer extends React.Component {
       <>
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
-          <Bookmark route={this.props.route} addRestaurant={this.addRestaurant} />
+          <Bookmark route={this.props.route} openDrawer={this.openDrawer} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
@@ -38,7 +45,7 @@ export default class AppDrawer extends React.Component {
               </p>
             </a>
           </div>
-          <CollectionList adding={this.state.adding} />
+          <CollectionList saving={this.state.saving} collections={this.state.collections} />
         </div>
         <div className={`appDrawerBackground ${open}`} onClick={this.handleClick}></div>
       </>
