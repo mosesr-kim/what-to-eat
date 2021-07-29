@@ -11,10 +11,13 @@ export default class App extends React.Component {
       lat: null,
       lng: null,
       zipCode: null,
+      businessIds: null,
+      saved: null,
       route: parseRoute(window.location.hash)
     };
     this.handleSuccess = this.handleSuccess.bind(this);
     this.handleCreateNewCollection = this.handleCreateNewCollection.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   handleSuccess(position) {
@@ -41,6 +44,17 @@ export default class App extends React.Component {
     fetch('/api/collection', init);
   }
 
+  handleSave(collectionId, businessId) {
+    const init = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ collectionId: collectionId, businessId: businessId })
+    };
+    fetch(('/api/restaurant'), init);
+  }
+
   componentDidMount() {
     window.addEventListener('hashchange', () => {
       this.setState({ route: parseRoute(window.location.hash) });
@@ -48,6 +62,9 @@ export default class App extends React.Component {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.handleSuccess);
     }
+    fetch('/api/restaurant')
+      .then(response => response.json())
+      .then(data => this.setState({ businessIds: data }));
   }
 
   renderPage() {
@@ -57,7 +74,11 @@ export default class App extends React.Component {
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
-      return <Details businessId={businessId} route={this.state.route} />;
+      let isSaved;
+      if (this.state.businessIds) {
+        isSaved = this.state.businessIds.includes(businessId);
+      }
+      return <Details businessId={businessId} route={this.state.route} handleSave={this.handleSave} isSaved={isSaved} />;
     }
     if (route.path === 'newCollection') {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} />;

@@ -34,7 +34,7 @@ export default class AppDrawer extends React.Component {
       <>
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
-          <Bookmark route={this.props.route} openDrawer={this.openDrawer} />
+          <Bookmark route={this.props.route} openDrawer={this.openDrawer} isSaved={this.props.isSaved} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
@@ -45,7 +45,7 @@ export default class AppDrawer extends React.Component {
               </p>
             </a>
           </div>
-          <CollectionList saving={this.state.saving} collections={this.state.collections} />
+          <CollectionList saving={this.state.saving} collections={this.state.collections} handleClick={this.handleClick} handleSave={this.props.handleSave} />
         </div>
         <div className={`appDrawerBackground ${open}`} onClick={this.handleClick}></div>
       </>

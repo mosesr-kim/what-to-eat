@@ -142,6 +142,20 @@ app.get(('/api/collections'), (req, res, next) => {
   }).catch(err => next(err));
 });
 
+app.get(('/api/restaurant'), (req, res, next) => {
+  const sql = `
+  select "businessId"
+    from "restaurants";
+  `;
+  const dbQuery = db.query(sql);
+  dbQuery.then(result => {
+    const businessIds = result.rows.map(businessId => {
+      return businessId.businessId;
+    });
+    res.status(200).send(businessIds);
+  }).catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

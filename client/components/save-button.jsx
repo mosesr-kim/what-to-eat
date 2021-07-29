@@ -8,14 +8,8 @@ export default class SaveButton extends React.Component {
   }
 
   handleSave() {
-    const init = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ collectionId: this.props.collectionId, businessId: this.props.saving })
-    };
-    fetch(('/api/restaurant'), init);
+    this.props.handleSave(this.props.collectionId, this.props.saving);
+    this.props.handleClick();
   }
 
   render() {

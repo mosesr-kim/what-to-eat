@@ -33,6 +33,18 @@ export default class SearchForm extends React.Component {
   }
 
   render() {
+    let restaurant;
+    if (!this.state.restaurant) {
+      restaurant = '';
+    } else {
+      restaurant = this.state.restaurant;
+    }
+    let location;
+    if (!this.state.location) {
+      location = '';
+    } else {
+      location = this.state.location;
+    }
     return (
       <>
         <div className="col-12 col-md-8 d-flex flex-nowrap justify-content-center justify-content-md-start">
@@ -43,7 +55,7 @@ export default class SearchForm extends React.Component {
               className="restaurantSearchInput"
               id="restaurant"
               placeholder="food, restaurants, businesses..."
-              value={this.state.restaurant}
+              value={restaurant}
               onChange={this.handleRestaurantChange}
               required
             />
@@ -53,7 +65,7 @@ export default class SearchForm extends React.Component {
               className="locationSearchInput"
               id="location"
               placeholder="location"
-              value={this.state.location}
+              value={location}
               onChange={this.handleLocationChange}
               required
             />

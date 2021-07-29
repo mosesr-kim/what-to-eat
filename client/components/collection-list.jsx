@@ -24,7 +24,7 @@ export default class CollectionList extends React.Component {
               {collection.count} places saved
             </h3>
           </div>
-          <SaveButton saving={this.props.saving} collectionId={collection.collectionId} />
+          <SaveButton saving={this.props.saving} collectionId={collection.collectionId} handleClick={this.props.handleClick} handleSave={this.props.handleSave} />
         </li>
       );
     });

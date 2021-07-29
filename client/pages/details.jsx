@@ -36,7 +36,7 @@ export default class Details extends React.Component {
     const categoryList = categoryArray.join(', ');
     return (
       <>
-        <AppDrawer route={this.props.route} businessId={this.props.businessId} />
+        <AppDrawer route={this.props.route} businessId={this.props.businessId} handleSave={this.props.handleSave} isSaved={this.props.isSaved} />
         <div className="details">
           <div className="detailsContainer">
             <div className="detailsHeader row g-0">
