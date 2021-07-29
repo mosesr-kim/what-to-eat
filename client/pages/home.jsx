@@ -28,7 +28,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <>
-        <Header onSubmit={this.handleSearch} location={this.props.location} />
+        <Header onSubmit={this.handleSearch} location={this.props.location} route={this.props.route} />
         <SearchResults searchResults={this.state} />
       </>
     );

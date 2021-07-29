@@ -24,7 +24,7 @@ export default class NewCollection extends React.Component {
   render() {
     return (
       <>
-        <AppDrawer />
+        <AppDrawer route={this.props.route} />
         <div className="newCollectionContainer">
           <div className="newCollectionHeader">
             <h2 className="newCollectionHeaderText">

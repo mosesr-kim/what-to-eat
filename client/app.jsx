@@ -10,11 +10,14 @@ export default class App extends React.Component {
     this.state = {
       lat: null,
       lng: null,
-      zipCode: null,
+      zipCode: '',
+      businessIds: [],
+      saved: null,
       route: parseRoute(window.location.hash)
     };
     this.handleSuccess = this.handleSuccess.bind(this);
     this.handleCreateNewCollection = this.handleCreateNewCollection.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   handleSuccess(position) {
@@ -38,9 +41,22 @@ export default class App extends React.Component {
       },
       body: JSON.stringify({ name: collectionName })
     };
-    fetch('/api/collection', init)
-      .then(response => response.json())
-      .then(data => {
+    fetch('/api/collection', init);
+  }
+
+  handleSave(collectionId, businessId) {
+    const init = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ collectionId: collectionId, businessId: businessId })
+    };
+    fetch(('/api/restaurant'), init)
+      .then(response => {
+        const savedBusinessId = [businessId];
+        const businessIds = this.state.businessIds.concat(savedBusinessId);
+        this.setState({ businessIds: businessIds });
       });
   }
 
@@ -51,19 +67,23 @@ export default class App extends React.Component {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.handleSuccess);
     }
+    fetch('/api/restaurant')
+      .then(response => response.json())
+      .then(data => this.setState({ businessIds: data }));
   }
 
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <Home location={this.state} />;
+      return <Home location={this.state} route={this.state.route} />;
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
-      return <Details businessId={businessId} />;
+      const isSaved = this.state.businessIds.includes(businessId);
+      return <Details businessId={businessId} route={this.state.route} handleSave={this.handleSave} isSaved={isSaved} />;
     }
     if (route.path === 'newCollection') {
-      return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} />;
+      return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;
     }
   }
 
