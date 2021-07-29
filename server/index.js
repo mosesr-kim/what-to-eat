@@ -22,7 +22,7 @@ app.use(jsonMiddleware);
 
 app.use(staticMiddleware);
 
-app.get(('/api/search'), (req, res, next) => {
+app.get('/api/search', (req, res, next) => {
   const { restaurant, location } = req.query;
 
   if (!restaurant || !location) {
@@ -42,7 +42,7 @@ app.get(('/api/search'), (req, res, next) => {
   });
 });
 
-app.get(('/api/location'), (req, res, next) => {
+app.get('/api/location', (req, res, next) => {
   const { lat, lng } = req.query;
   if (!lat || !lng) {
     throw new ClientError(400, 'latitude and longitude are required');
@@ -62,7 +62,7 @@ app.get(('/api/location'), (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get(('/api/business'), (req, res, next) => {
+app.get('/api/business', (req, res, next) => {
   const { businessId } = req.query;
   if (!businessId) {
     throw new ClientError(400, 'businessId is required');
@@ -76,7 +76,7 @@ app.get(('/api/business'), (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post(('/api/collection'), (req, res, next) => {
+app.post('/api/collection', (req, res, next) => {
   const { name } = req.body;
   if (!name) {
     throw new ClientError(400, 'name is required');
@@ -93,7 +93,7 @@ app.post(('/api/collection'), (req, res, next) => {
   }).catch(err => next(err));
 });
 
-app.post(('/api/restaurant'), (req, res, next) => {
+app.post('/api/restaurant', (req, res, next) => {
   const { collectionId, businessId } = req.body;
   if (!collectionId || !businessId) {
     throw new ClientError(400, 'collectionId and businessId are required');
@@ -109,22 +109,21 @@ app.post(('/api/restaurant'), (req, res, next) => {
       const params = [collectionId, businessId, json];
       const dbQuery = db.query(sql, params);
       dbQuery.then(result => {
-        res.status(201).send(result.rows[0]);
-      }).catch(err => next(err));
-      const setImageSQL = `
+        const setImageSQL = `
         update "collections"
            set "image" = coalesce("image", $1)
          where "collectionId" = $2
       `;
-      const setImageParams = [json.image_url, collectionId];
-      const dbQueryImage = db.query(setImageSQL, setImageParams);
-      dbQueryImage.then()
-        .catch(err => next(err));
+        const setImageParams = [json.image_url, collectionId];
+        const dbQueryImage = db.query(setImageSQL, setImageParams);
+        dbQueryImage().catch(err => next(err));
+        res.status(201).send(result.rows[0]);
+      }).catch(err => next(err));
     })
     .catch(err => next(err));
 });
 
-app.get(('/api/collections'), (req, res, next) => {
+app.get('/api/collections', (req, res, next) => {
   const sql = `
   select "c"."name",
          "c"."collectionId",
@@ -142,15 +141,15 @@ app.get(('/api/collections'), (req, res, next) => {
   }).catch(err => next(err));
 });
 
-app.get(('/api/restaurant'), (req, res, next) => {
+app.get('/api/restaurant', (req, res, next) => {
   const sql = `
   select "businessId"
     from "restaurants";
   `;
   const dbQuery = db.query(sql);
   dbQuery.then(result => {
-    const businessIds = result.rows.map(businessId => {
-      return businessId.businessId;
+    const businessIds = result.rows.map(row => {
+      return row.businessId;
     });
     res.status(200).send(businessIds);
   }).catch(err => next(err));

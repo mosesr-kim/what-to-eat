@@ -3,9 +3,6 @@ import React from 'react';
 export default class Bookmark extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      saved: null
-    };
     this.handleAdd = this.handleAdd.bind(this);
   }
 

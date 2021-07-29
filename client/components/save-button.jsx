@@ -3,7 +3,6 @@ import React from 'react';
 export default class SaveButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
     this.handleSave = this.handleSave.bind(this);
   }
 

@@ -9,8 +9,7 @@ export default class Details extends React.Component {
     super(props);
     this.state = {
       businessDetails: null,
-      businessReviews: null,
-      saving: null
+      businessReviews: null
     };
   }
 

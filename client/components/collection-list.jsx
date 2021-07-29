@@ -2,11 +2,6 @@ import React from 'react';
 import SaveButton from './save-button';
 
 export default class CollectionList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     if (!this.props.collections) return null;
     const collectionList = this.props.collections.map((collection, index) => {
