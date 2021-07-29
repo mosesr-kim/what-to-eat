@@ -53,6 +53,11 @@ export default class App extends React.Component {
       body: JSON.stringify({ collectionId: collectionId, businessId: businessId })
     };
     fetch(('/api/restaurant'), init);
+    const businessIds = this.state.businessIds;
+    businessIds.push(businessId);
+    this.setState({
+      businessIds: businessIds
+    });
   }
 
   componentDidMount() {
