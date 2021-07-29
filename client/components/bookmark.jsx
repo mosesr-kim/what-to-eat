@@ -11,17 +11,13 @@ export default class Bookmark extends React.Component {
   }
 
   render() {
-    if (this.props.route) {
-      if (this.props.route.path === 'details') {
-        const saved = this.props.isSaved ? 'fas fa-bookmark' : 'far fa-bookmark';
-        return (
-          <>
-            <i className={`${saved} bookmark`} onClick={this.handleAdd}></i>
-          </>
-        );
-      }
-    } else {
-      return null;
-    }
+    if (this.props.route.path === 'details') {
+      const saved = this.props.isSaved ? 'fas fa-bookmark' : 'far fa-bookmark';
+      return (
+        <>
+          <i className={`${saved} bookmark`} onClick={this.handleAdd}></i>
+        </>
+      );
+    } else return null;
   }
 }

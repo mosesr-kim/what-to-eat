@@ -10,7 +10,7 @@ export default class App extends React.Component {
     this.state = {
       lat: null,
       lng: null,
-      zipCode: null,
+      zipCode: '',
       businessIds: [],
       saved: null,
       route: parseRoute(window.location.hash)
@@ -75,7 +75,7 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === '') {
-      return <Home location={this.state} />;
+      return <Home location={this.state} route={this.state.route} />;
     }
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
@@ -83,7 +83,7 @@ export default class App extends React.Component {
       return <Details businessId={businessId} route={this.state.route} handleSave={this.handleSave} isSaved={isSaved} />;
     }
     if (route.path === 'newCollection') {
-      return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} />;
+      return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;
     }
   }
 
