@@ -155,6 +155,23 @@ app.get('/api/restaurant', (req, res, next) => {
   }).catch(err => next(err));
 });
 
+app.get('/api/restaurants', (req, res, next) => {
+  const { collectionId } = req.query;
+  if (!collectionId) {
+    throw new ClientError(400, 'collectionID is required');
+  }
+  const sql = `
+  select "json"
+    from "restaurants"
+   where "collectionId" = $1;
+  `;
+  const params = [collectionId];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    res.status(200).send(result.rows);
+  }).catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
