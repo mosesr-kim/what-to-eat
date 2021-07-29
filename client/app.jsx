@@ -87,7 +87,8 @@ export default class App extends React.Component {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;
     }
     if (route.path === 'collection') {
-      return <Collection route={this.state.route} />;
+      const collectionId = route.params.get('collectionId');
+      return <Collection route={this.state.route} collectionId={collectionId} />;
     }
   }
 

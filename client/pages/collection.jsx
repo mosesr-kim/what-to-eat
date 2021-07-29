@@ -30,20 +30,20 @@ export default class Collection extends React.Component {
   }
 
   componentDidMount() {
-    this.getRestaurants(this.props.route.params.get('collectionId'));
-    this.getCollectionName(this.props.route.params.get('collectionId'));
+    this.getRestaurants(this.props.collectionId);
+    this.getCollectionName(this.props.collectionId);
   }
 
   render() {
-    const restaurantsLi = this.state.restaurants.map(restaurant => {
-      const { id, alias, categories, location, name, price, rating } = restaurant.json;
+    const restaurantsLi = this.state.restaurants.map((restaurant, index) => {
+      const { alias, categories, location, name, price, rating } = restaurant.json;
       const imageURL = restaurant.json.image_url;
       const reviewCount = restaurant.json.review_count;
       const displayAddress = location.display_address.join(' ');
       const categoryArray = categories.map(category => category.title);
       const categoryList = categoryArray.join(', ');
       return (
-        <a key={id} href={`#details?businessId=${alias}`} >
+        <a key={index} href={`#details?businessId=${alias}`} >
           <li businessid={alias} className="searchResult">
             <div className="restaurantContainer row g-0">
               <div className="imageColumn">
@@ -80,9 +80,9 @@ export default class Collection extends React.Component {
       <>
         <AppDrawer route={this.props.route} />
         <div className="searchResultContainer">
-          <div className="searchResultHeader">
-            <h2 className="searchResultHeaderText">
-              {this.state.collectionName} Collection
+          <div className="collectionHeader">
+            <h2 className="collectionHeaderText">
+              {this.state.collectionName}
             </h2>
           </div>
           <ul className="searchResultList">{restaurantsLi}</ul>

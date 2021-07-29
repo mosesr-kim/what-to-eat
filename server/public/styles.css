@@ -520,6 +520,17 @@ li {
   filter: brightness(95%);
 }
 
+.collectionHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.collectionHeaderText {
+  font-family: 'raleway', sans-serif;
+  font-size: 1.5rem;
+  color: #e8c4b8;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
