@@ -52,7 +52,7 @@ export default class App extends React.Component {
       },
       body: JSON.stringify({ collectionId: collectionId, businessId: businessId })
     };
-    fetch(('/api/restaurant'), init)
+    fetch('/api/restaurant', init)
       .then(response => {
         const savedBusinessId = [businessId];
         const businessIds = this.state.businessIds.concat(savedBusinessId);

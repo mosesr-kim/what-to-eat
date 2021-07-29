@@ -116,7 +116,7 @@ app.post('/api/restaurant', (req, res, next) => {
       `;
         const setImageParams = [json.image_url, collectionId];
         const dbQueryImage = db.query(setImageSQL, setImageParams);
-        dbQueryImage().catch(err => next(err));
+        dbQueryImage.then().catch(err => next(err));
         res.status(201).send(result.rows[0]);
       }).catch(err => next(err));
     })
