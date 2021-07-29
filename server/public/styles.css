@@ -477,10 +477,6 @@ li {
   height: 60px;
 }
 
-.collectionLi:hover {
-  filter: brightness(95%);
-}
-
 .collectionImageColumn {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,93 @@
+import React from 'react';
+import AppDrawer from '../components/app-drawer';
+import Stars from '../components/stars';
+
+export default class Collection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      restaurants: [],
+      collectionName: ''
+    };
+    this.getRestaurants = this.getRestaurants.bind(this);
+    this.getCollectionName = this.getCollectionName.bind(this);
+  }
+
+  getRestaurants(collectionId) {
+    fetch(`/api/restaurants?collectionId=${collectionId}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ restaurants: data });
+      });
+  }
+
+  getCollectionName(collectionId) {
+    fetch(`/api/collection?collectionId=${collectionId}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ collectionName: data.name });
+      });
+  }
+
+  componentDidMount() {
+    this.getRestaurants(this.props.route.params.get('collectionId'));
+    this.getCollectionName(this.props.route.params.get('collectionId'));
+  }
+
+  render() {
+    const restaurantsLi = this.state.restaurants.map(restaurant => {
+      const { id, alias, categories, location, name, price, rating } = restaurant.json;
+      const imageURL = restaurant.json.image_url;
+      const reviewCount = restaurant.json.review_count;
+      const displayAddress = location.display_address.join(' ');
+      const categoryArray = categories.map(category => category.title);
+      const categoryList = categoryArray.join(', ');
+      return (
+        <a key={id} href={`#details?businessId=${alias}`} >
+          <li businessid={alias} className="searchResult">
+            <div className="restaurantContainer row g-0">
+              <div className="imageColumn">
+                <img src={imageURL} alt="business image" className="searchImage" />
+              </div>
+              <div className="textColumn align-items-start">
+                <div className="row g-0">
+                  <p className="restaurantNameText">
+                    {name}
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantRating">
+                    {rating} <Stars rating={rating} />{reviewCount} Reviews
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantCategory">
+                    {price} &#8226; {categoryList}
+                  </p>
+                </div>
+                <div className="row g-0">
+                  <p className="restaurantAddress">
+                    {displayAddress}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </a>
+      );
+    });
+    return (
+      <>
+        <AppDrawer route={this.props.route} />
+        <div className="searchResultContainer">
+          <div className="searchResultHeader">
+            <h2 className="searchResultHeaderText">
+              {this.state.collectionName} Collection
+            </h2>
+          </div>
+          <ul className="searchResultList">{restaurantsLi}</ul>
+        </div>
+      </>
+    );
+  }
+}

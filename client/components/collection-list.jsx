@@ -7,7 +7,7 @@ export default class CollectionList extends React.Component {
     const collectionList = this.props.collections.map((collection, index) => {
       const image = collection.image ? '' : 'hidden';
       return (
-        <a href={`#collection?collectionId=${collection.collectionId}`} key={collection.collectionId}>
+        <a href={`#collection?collectionId=${collection.collectionId}`} key={collection.collectionId} >
           <li className="collectionLi">
             <div className="collectionImageColumn">
               <img src={collection.image} alt={`${collection.name} image`} className={`collectionImage ${image}`} />

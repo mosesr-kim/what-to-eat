@@ -3,6 +3,7 @@ import parseRoute from './lib/parse-route';
 import Home from './pages/home';
 import Details from './pages/details';
 import NewCollection from './pages/new-collection';
+import Collection from './pages/collection';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -84,6 +85,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'newCollection') {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;
+    }
+    if (route.path === 'collection') {
+      return <Collection route={this.state.route} />;
     }
   }
 
