@@ -34,14 +34,16 @@ export default class Collection extends React.Component {
   }
 
   render() {
-    const restaurantsLi = this.state.restaurants.map((restaurant, index) => {
-      const { alias, categories, location, name, price, rating } = restaurant.json;
-      const imageURL = restaurant.json.image_url;
-      const reviewCount = restaurant.json.review_count;
-      const displayAddress = location.display_address.join(' ');
-      const categoryArray = categories.map(category => category.title);
-      const categoryList = categoryArray.join(', ');
-      return (
+    const restaurantsLi = !this.state.restaurants[0]
+      ? null
+      : this.state.restaurants.map((restaurant, index) => {
+        const { alias, categories, location, name, price, rating } = restaurant.json;
+        const imageURL = restaurant.json.image_url;
+        const reviewCount = restaurant.json.review_count;
+        const displayAddress = location.display_address.join(' ');
+        const categoryArray = categories.map(category => category.title);
+        const categoryList = categoryArray.join(', ');
+        return (
         <a key={index} href={`#details?businessId=${alias}`} >
           <li businessid={alias} className="searchResult">
             <div className="restaurantContainer row g-0">
@@ -73,8 +75,8 @@ export default class Collection extends React.Component {
             </div>
           </li>
         </a>
-      );
-    });
+        );
+      });
     return (
       <>
         <AppDrawer route={this.props.route} />

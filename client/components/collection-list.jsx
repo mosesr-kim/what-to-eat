@@ -21,7 +21,7 @@ export default class CollectionList extends React.Component {
           </div>
           { this.props.saving
             ? <SaveButton saving={this.props.saving} collectionId={collection.collectionId} handleClick={this.props.handleClick} handleSave={this.props.handleSave} />
-            : <a href={`#collection? collectionId = ${collection.collectionId}`} className="viewAnchor">View</a>
+            : <a href={`#collection?collectionId=${collection.collectionId}`} className="viewAnchor">View</a>
           }
         </li>
       );
