@@ -531,6 +531,21 @@ li {
   color: #e8c4b8;
 }
 
+.viewAnchor {
+  position: absolute;
+  right: 1rem;
+  background-color: #e8c4b8;
+  color: #363434;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.viewAnchor:hover {
+  filter: brightness(95%);
+  color: inherit;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
