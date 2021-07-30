@@ -1,5 +1,6 @@
 import React from 'react';
 import AppDrawer from '../components/app-drawer';
+import RandomRestaurant from '../components/random-restaurant';
 import Stars from '../components/stars';
 
 export default class Collection extends React.Component {
@@ -93,6 +94,7 @@ export default class Collection extends React.Component {
           </div>
           <ul className="searchResultList">{restaurantsLi}</ul>
         </div>
+        <RandomRestaurant randomRestaurant={this.state.randomRestaurant} />
       </>
     );
   }
