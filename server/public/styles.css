@@ -546,6 +546,18 @@ li {
   color: inherit;
 }
 
+.randomButton {
+  color: #e8c4b8;
+  font-size: 1.75rem;
+  margin-top: 15px;
+  margin-right: 25px;
+}
+
+.randomButton:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;

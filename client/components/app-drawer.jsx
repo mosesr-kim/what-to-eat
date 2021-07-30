@@ -1,6 +1,7 @@
 import React from 'react';
 import Bookmark from './bookmark';
 import CollectionList from './collection-list';
+import Random from './random-button';
 
 export default class AppDrawer extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class AppDrawer extends React.Component {
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
           <Bookmark route={this.props.route} openDrawer={this.openDrawer} isSaved={this.props.isSaved} />
+          <Random route={this.props.route} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
