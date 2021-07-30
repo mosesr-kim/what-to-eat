@@ -3,6 +3,7 @@ import parseRoute from './lib/parse-route';
 import Home from './pages/home';
 import Details from './pages/details';
 import NewCollection from './pages/new-collection';
+import Collection from './pages/collection';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export default class App extends React.Component {
       },
       body: JSON.stringify({ collectionId: collectionId, businessId: businessId })
     };
-    fetch(('/api/restaurant'), init)
+    fetch('/api/restaurant', init)
       .then(response => {
         const savedBusinessId = [businessId];
         const businessIds = this.state.businessIds.concat(savedBusinessId);
@@ -84,6 +85,10 @@ export default class App extends React.Component {
     }
     if (route.path === 'newCollection') {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;
+    }
+    if (route.path === 'collection') {
+      const collectionId = route.params.get('collectionId');
+      return <Collection route={this.state.route} collectionId={collectionId} />;
     }
   }
 

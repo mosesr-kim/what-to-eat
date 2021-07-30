@@ -116,7 +116,7 @@ app.post('/api/restaurant', (req, res, next) => {
       `;
         const setImageParams = [json.image_url, collectionId];
         const dbQueryImage = db.query(setImageSQL, setImageParams);
-        dbQueryImage().catch(err => next(err));
+        dbQueryImage.then().catch(err => next(err));
         res.status(201).send(result.rows[0]);
       }).catch(err => next(err));
     })
@@ -152,6 +152,28 @@ app.get('/api/restaurant', (req, res, next) => {
       return row.businessId;
     });
     res.status(200).send(businessIds);
+  }).catch(err => next(err));
+});
+
+app.get('/api/collection', (req, res, next) => {
+  const { collectionId } = req.query;
+  if (!collectionId) {
+    throw new ClientError(400, 'collectionId is required');
+  }
+  const sql = `
+  select "c"."name", json_agg("r") as "restaurants"
+    from "collections" as "c"
+    left join "restaurants" as "r" using ("collectionId")
+   where "c"."collectionId" = $1
+   group by "c"."collectionId";
+  `;
+  const params = [collectionId];
+  const dbQuery = db.query(sql, params);
+  dbQuery.then(result => {
+    const restaurants = result.rows[0].restaurants[0]
+      ? result.rows[0].restaurants
+      : [];
+    res.status(200).send([{ name: result.rows[0].name, restaurants: restaurants }]);
   }).catch(err => next(err));
 });
 
