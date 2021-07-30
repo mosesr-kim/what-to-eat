@@ -34,6 +34,13 @@ export default class Collection extends React.Component {
     this.getCollectionName(this.props.collectionId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.collectionId !== prevProps.collectionId) {
+      this.getRestaurants(this.props.collectionId);
+      this.getCollectionName(this.props.collectionId);
+    }
+  }
+
   render() {
     const restaurantsLi = this.state.restaurants.map((restaurant, index) => {
       const { alias, categories, location, name, price, rating } = restaurant.json;
