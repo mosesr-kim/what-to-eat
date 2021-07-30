@@ -170,7 +170,10 @@ app.get('/api/collection', (req, res, next) => {
   const params = [collectionId];
   const dbQuery = db.query(sql, params);
   dbQuery.then(result => {
-    res.status(200).send(result.rows);
+    const restaurants = result.rows[0].restaurants[0]
+      ? result.rows[0].restaurants
+      : [];
+    res.status(200).send([{ name: result.rows[0].name, restaurants: restaurants }]);
   }).catch(err => next(err));
 });
 
