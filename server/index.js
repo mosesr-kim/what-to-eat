@@ -155,37 +155,22 @@ app.get('/api/restaurant', (req, res, next) => {
   }).catch(err => next(err));
 });
 
-app.get('/api/restaurants', (req, res, next) => {
-  const { collectionId } = req.query;
-  if (!collectionId) {
-    throw new ClientError(400, 'collectionID is required');
-  }
-  const sql = `
-  select "json"
-    from "restaurants"
-   where "collectionId" = $1;
-  `;
-  const params = [collectionId];
-  const dbQuery = db.query(sql, params);
-  dbQuery.then(result => {
-    res.status(200).send(result.rows);
-  }).catch(err => next(err));
-});
-
 app.get('/api/collection', (req, res, next) => {
   const { collectionId } = req.query;
   if (!collectionId) {
     throw new ClientError(400, 'collectionId is required');
   }
   const sql = `
-  select "name"
-    from "collections"
-   where "collectionId" = $1;
+  select "c"."name", json_agg("r") as "restaurants"
+    from "collections" as "c"
+    left join "restaurants" as "r" using ("collectionId")
+   where "c"."collectionId" = $1
+   group by "c"."collectionId";
   `;
   const params = [collectionId];
   const dbQuery = db.query(sql, params);
   dbQuery.then(result => {
-    res.status(200).send(result.rows[0]);
+    res.status(200).send(result.rows);
   }).catch(err => next(err));
 });
 

@@ -9,35 +9,27 @@ export default class Collection extends React.Component {
       restaurants: [],
       collectionName: ''
     };
-    this.getRestaurants = this.getRestaurants.bind(this);
-    this.getCollectionName = this.getCollectionName.bind(this);
+    this.getCollection = this.getCollection.bind(this);
   }
 
-  getRestaurants(collectionId) {
-    fetch(`/api/restaurants?collectionId=${collectionId}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ restaurants: data });
-      });
-  }
-
-  getCollectionName(collectionId) {
+  getCollection(collectionId) {
     fetch(`/api/collection?collectionId=${collectionId}`)
       .then(response => response.json())
       .then(data => {
-        this.setState({ collectionName: data.name });
+        this.setState({
+          collectionName: data[0].name,
+          restaurants: data[0].restaurants
+        });
       });
   }
 
   componentDidMount() {
-    this.getRestaurants(this.props.collectionId);
-    this.getCollectionName(this.props.collectionId);
+    this.getCollection(this.props.collectionId);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.collectionId !== prevProps.collectionId) {
-      this.getRestaurants(this.props.collectionId);
-      this.getCollectionName(this.props.collectionId);
+      this.getCollection(this.props.collectionId);
     }
   }
 
