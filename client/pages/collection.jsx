@@ -13,6 +13,7 @@ export default class Collection extends React.Component {
     };
     this.getCollection = this.getCollection.bind(this);
     this.handleRandom = this.handleRandom.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   getCollection(collectionId) {
@@ -29,6 +30,10 @@ export default class Collection extends React.Component {
   handleRandom() {
     const index = Math.floor(Math.random() * this.state.restaurants.length);
     this.setState({ randomRestaurant: this.state.restaurants[index] });
+  }
+
+  closeModal() {
+    this.setState({ randomRestaurant: null });
   }
 
   componentDidMount() {
@@ -94,7 +99,7 @@ export default class Collection extends React.Component {
           </div>
           <ul className="searchResultList">{restaurantsLi}</ul>
         </div>
-        <RandomRestaurant randomRestaurant={this.state.randomRestaurant} />
+        <RandomRestaurant randomRestaurant={this.state.randomRestaurant} closeModal={this.closeModal} />
       </>
     );
   }

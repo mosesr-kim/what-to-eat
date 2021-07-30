@@ -2,18 +2,6 @@ import React from 'react';
 import Stars from './stars';
 
 export default class RandomRestaurant extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: true
-    };
-    this.toggleModal = this.toggleModal.bind(this);
-  }
-
-  toggleModal() {
-    this.setState({ isOpen: !this.state.isOpen });
-  }
-
   render() {
     if (!this.props.randomRestaurant) return null;
     const { businessId, json } = this.props.randomRestaurant;
@@ -23,10 +11,12 @@ export default class RandomRestaurant extends React.Component {
     const displayAddress = location.display_address.join(' ');
     const categoryArray = categories.map(category => category.title);
     const categoryList = categoryArray.join(', ');
-    // const isOpen = this.state.isOpen ? '' : 'hidden';
     return (
-      <div className='randomModalContainer' onClick={this.toggleModal} >
+      <div className='randomModalContainer' >
         <div className="randomModal">
+          <h3 className="randomRestaurantHeader">
+            {name}
+          </h3>
           <div className="randomRestaurant">
             <a href={`#details?businessId=${businessId}`} >
               <div className="restaurantContainer row g-0">
@@ -57,6 +47,11 @@ export default class RandomRestaurant extends React.Component {
                 </div>
               </div>
             </a>
+          </div>
+          <div className="closeButtonRow">
+            <button className="randomCloseButton" onClick={this.props.closeModal} >
+              Close
+            </button>
           </div>
         </div>
       </div>
