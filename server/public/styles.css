@@ -547,14 +547,14 @@ li {
 }
 
 .randomButton {
-  color: #e8c4b8;
+  color: #e1dbd1;
   font-size: 2rem;
   margin-top: 15px;
   margin-right: 25px;
 }
 
 .randomButton:hover {
-  filter: brightness(95%);
+  color: #e8c4b8;
   cursor: pointer;
 }
 
@@ -652,7 +652,8 @@ li {
 
 .randomRestaurantHeader {
   font-family: 'raleway', sans-serif;
-  color: #e8c4b8;
+  color: #e1e1e1;
+  margin-bottom: 0;
 }
 
 .closeButtonRow {
