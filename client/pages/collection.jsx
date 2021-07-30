@@ -7,9 +7,11 @@ export default class Collection extends React.Component {
     super(props);
     this.state = {
       restaurants: [],
-      collectionName: ''
+      collectionName: '',
+      randomRestaurant: null
     };
     this.getCollection = this.getCollection.bind(this);
+    this.handleRandom = this.handleRandom.bind(this);
   }
 
   getCollection(collectionId) {
@@ -21,6 +23,11 @@ export default class Collection extends React.Component {
           restaurants: data[0].restaurants
         });
       });
+  }
+
+  handleRandom() {
+    const index = Math.floor(Math.random() * this.state.restaurants.length);
+    this.setState({ randomRestaurant: this.state.restaurants[index] });
   }
 
   componentDidMount() {
@@ -77,7 +84,7 @@ export default class Collection extends React.Component {
     });
     return (
       <>
-        <AppDrawer route={this.props.route} />
+        <AppDrawer route={this.props.route} handleRandom={this.handleRandom} />
         <div className="searchResultContainer">
           <div className="collectionHeader">
             <h2 className="collectionHeaderText">

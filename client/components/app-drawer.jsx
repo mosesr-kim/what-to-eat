@@ -36,7 +36,7 @@ export default class AppDrawer extends React.Component {
         <div className="navBar">
           <i className="fas fa-bars navBarIcon" onClick={this.handleClick}></i>
           <Bookmark route={this.props.route} openDrawer={this.openDrawer} isSaved={this.props.isSaved} />
-          <Random route={this.props.route} />
+          <Random route={this.props.route} handleRandom={this.props.handleRandom} />
         </div>
         <div className={`appDrawer ${open}`}>
           <div className="createNewCollectionLink">
