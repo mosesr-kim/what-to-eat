@@ -81,7 +81,7 @@ export default class App extends React.Component {
     if (route.path === 'details') {
       const businessId = route.params.get('businessId');
       const isSaved = this.state.businessIds.includes(businessId);
-      return <Details businessId={businessId} route={this.state.route} handleSave={this.handleSave} isSaved={isSaved} />;
+      return <Details businessId={businessId} route={this.state.route} handleSave={this.handleSave} isSaved={isSaved} lat={this.state.lat} lng={this.state.lng} />;
     }
     if (route.path === 'newCollection') {
       return <NewCollection handleCreateNewCollection={this.handleCreateNewCollection} route={this.state.route} />;

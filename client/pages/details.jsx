@@ -98,7 +98,7 @@ export default class Details extends React.Component {
           </div>
         </div>
         <ReviewList businessReviews={this.state.businessReviews} />
-        <Map />
+        <Map lat={this.props.lat} lng={this.props.lng} businessDetails={this.state.businessDetails} />
       </>
     );
   }

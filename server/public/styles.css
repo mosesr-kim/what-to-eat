@@ -249,9 +249,14 @@ li {
 }
 
 .reviewsContainer {
-  width: 95%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
   margin-top: 1rem;
+  border-bottom: 1px solid #e1dbd1;
+}
+
+.reviewsInnerContainer {
+  width: 95%;
 }
 
 .reviewHeader {
@@ -675,6 +680,60 @@ li {
   filter: brightness(95%);
 }
 
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  border-bottom: 1px solid #e1dbd1;
+}
+
+.mapInnerContainer {
+  width: 95%;
+}
+
+.mapHeader {
+  margin-left: 2rem;
+  color: #e8c4b8;
+  font-family: 'raleway', sans-serif;
+}
+
+.mapHeaderText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0;
+}
+
+.routeButtonRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.routeButton {
+  border: none;
+  color: #363434;
+  background-color: #e8c4b8;
+  border-radius: 5px;
+  font-family: 'poppins', sans-serif;
+  font-size: 1rem;
+  height: 30px;
+  padding: 5px 10px;
+  margin: 1rem 0;
+}
+
+input#ORIGIN,
+input#DESTINATION {
+  background-color: #e1dbd1;
+  font-family: 'raleway', sans-serif;
+  letter-spacing: 0.1rem;
+  color: #363434;
+}
+
+input#ORIGIN:focus,
+input#DESTINATION:focus {
+  outline: none;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
@@ -711,7 +770,11 @@ li {
     height: 275px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 90%;
+  }
+
+  .mapInnerContainer {
     width: 90%;
   }
 
@@ -766,7 +829,11 @@ li {
     height: 300px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 80%;
+  }
+
+  .mapInnerContainer {
     width: 80%;
   }
 }
@@ -788,7 +855,11 @@ li {
     padding-left: 10px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 70%;
+  }
+
+  .mapInnerContainer {
     width: 70%;
   }
 }
@@ -798,31 +869,51 @@ li {
     max-width: 50%;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 65%;
+  }
+
+  .mapInnerContainer {
     width: 65%;
   }
 }
 
 @media (min-width: 1200px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 60%;
+  }
+
+  .mapInnerContainer {
     width: 60%;
   }
 }
 
 @media (min-width: 1300px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 50%;
+  }
+
+  .mapInnerContainer {
     width: 50%;
   }
 }
 
 @media (min-width: 1400px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 45%;
+  }
+
+  .mapInnerContainer {
     width: 45%;
   }
 }
 
 @media (min-width: 2300px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 40%;
+  }
+
+  .mapInnerContainer {
     width: 40%;
   }
 }
