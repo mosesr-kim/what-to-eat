@@ -27,9 +27,7 @@ export default class CollectionList extends React.Component {
       );
     });
     return (
-      <>
-        <ul className="collectionList">{collectionList}</ul>
-      </>
+      <ul className="collectionList">{collectionList}</ul>
     );
   }
 }
