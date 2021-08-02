@@ -3,6 +3,7 @@ import ReviewList from '../components/review-list';
 import Stars from '../components/stars';
 import Carousel from 'react-bootstrap/Carousel';
 import AppDrawer from '../components/app-drawer';
+import Map from '../components/map';
 
 export default class Details extends React.Component {
   constructor(props) {
@@ -97,6 +98,7 @@ export default class Details extends React.Component {
           </div>
         </div>
         <ReviewList businessReviews={this.state.businessReviews} />
+        <Map />
       </>
     );
   }
