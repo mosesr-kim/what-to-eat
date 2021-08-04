@@ -10,7 +10,7 @@ const client = yelp.client(process.env.YELP_API_KEY);
 const fetch = require('node-fetch');
 
 const db = new pg.Pool({
-  connectionString: 'postgress://dev:dev@localhost/whatToEat',
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
