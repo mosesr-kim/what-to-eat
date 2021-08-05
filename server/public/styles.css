@@ -50,20 +50,20 @@
 
 .restaurantSearchInput,
 .locationSearchInput {
-  width: 18rem;
+  width: 17rem;
   height: 2.5rem;
   background-color: #e1dbd1;
   border: none;
   border-radius: 0.3rem 0 0 0.3rem;
   text-indent: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1rem;
   color: #363434;
 }
 
 .locationSearchInput {
-  width: 6rem;
+  width: 5rem;
   height: 2.5rem;
   border-left: 1px solid #363434;
   border-radius: 0;
@@ -72,7 +72,7 @@
 .restaurantSearchInput::placeholder,
 .locationSearchInput::placeholder {
   font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1rem;
 }
 
