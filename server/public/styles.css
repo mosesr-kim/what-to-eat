@@ -627,6 +627,10 @@ li {
   font-size: 1rem;
   font-family: 'poppins', sans-serif;
   padding-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .randomRestaurantNameText {
@@ -661,6 +665,11 @@ li {
   font-family: 'raleway', sans-serif;
   color: #e1e1e1;
   margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 0 1rem;
 }
 
 .closeButtonRow {

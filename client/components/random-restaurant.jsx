@@ -24,26 +24,18 @@ export default class RandomRestaurant extends React.Component {
                   <img src={imageURL} alt="business image" className="randomImage" />
                 </div>
                 <div className="randomTextColumn align-items-start">
-                  <div className="row g-0">
-                    <p className="randomRestaurantNameText">
-                      {name}
-                    </p>
-                  </div>
-                  <div className="row g-0">
-                    <p className="randomRestaurantRating">
-                      {rating} <Stars rating={rating} />{reviewCount} Reviews
-                    </p>
-                  </div>
-                  <div className="row g-0">
-                    <p className="randomRestaurantCategory">
-                      {price} &#8226; {categoryList}
-                    </p>
-                  </div>
-                  <div className="row g-0">
-                    <p className="randomRestaurantAddress">
-                      {displayAddress}
-                    </p>
-                  </div>
+                  <p className="randomRestaurantNameText">
+                    {name}
+                  </p>
+                  <p className="randomRestaurantRating">
+                    {rating} <Stars rating={rating} />{reviewCount} Reviews
+                  </p>
+                  <p className="randomRestaurantCategory">
+                    {price} &#8226; {categoryList}
+                  </p>
+                  <p className="randomRestaurantAddress">
+                    {displayAddress}
+                  </p>
                 </div>
               </div>
             </a>
