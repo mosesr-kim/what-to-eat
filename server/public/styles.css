@@ -35,6 +35,7 @@
   height: 2.5rem;
   width: 2rem;
   border-radius: 0 0.3rem 0.3rem 0;
+  padding: 0;
 }
 
 .searchIcon {
@@ -871,6 +872,21 @@ input#DESTINATION {
 
   .mapInnerContainer {
     width: 70%;
+  }
+
+  .restaurantSearchInput,
+  .locationSearchInput {
+    width: 18rem;
+    font-size: 1rem;
+  }
+
+  .locationSearchInput {
+    width: 6rem;
+  }
+
+  .restaurantSearchInput::placeholder,
+  .locationSearchInput::placeholder {
+    font-size: 1rem;
   }
 }
 
