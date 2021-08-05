@@ -143,6 +143,7 @@ li {
   justify-content: center;
   height: 100px;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .restaurantNameText,
@@ -155,6 +156,8 @@ li {
   font-family: 'poppins', sans-serif;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .restaurantNameText {
