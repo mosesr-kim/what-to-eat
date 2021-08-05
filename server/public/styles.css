@@ -124,6 +124,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 20%;
+  padding: 0;
 }
 
 .searchImage {
@@ -141,7 +142,7 @@ li {
   width: 80%;
   justify-content: center;
   height: 100px;
-  overflow: hidden;
+  padding-left: 1rem;
 }
 
 .restaurantNameText,
@@ -152,6 +153,8 @@ li {
   margin-bottom: 0;
   font-size: 1rem;
   font-family: 'poppins', sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .restaurantNameText {
@@ -180,11 +183,6 @@ li {
   color: #7c7777;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
-}
-
-.imageColumn,
-.textColumn {
-  padding: 0;
 }
 
 .details {
@@ -748,6 +746,10 @@ input#DESTINATION {
   .detailsRating {
     font-size: 1rem;
     letter-spacing: 0.1rem;
+  }
+
+  .textColumn {
+    padding-left: 0;
   }
 }
 
