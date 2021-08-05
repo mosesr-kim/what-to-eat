@@ -39,6 +39,9 @@ export default class AppDrawer extends React.Component {
           <Random route={this.props.route} handleRandom={this.props.handleRandom} />
         </div>
         <div className={`appDrawer ${open}`}>
+          <a href="#">
+            <img src="logo.svg" alt="what to eat logo" />
+          </a>
           <div className="createNewCollectionLink">
             <a href="#newCollection" className="newCollectionLink">
               <i className="fas fa-plus plusIcon"></i>
