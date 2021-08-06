@@ -40,6 +40,10 @@ export default class Map extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({ destination: this.props.displayAddress });
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.lat !== this.props.lat && prevProps.lng !== this.props.lng) {
       fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
