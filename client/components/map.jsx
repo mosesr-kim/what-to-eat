@@ -19,8 +19,6 @@ export default class Map extends React.Component {
   }
 
   directionsCallback(response) {
-    // console.log(response);
-
     if (response !== null) {
       if (response.status === 'OK') {
         this.setState({ response });
