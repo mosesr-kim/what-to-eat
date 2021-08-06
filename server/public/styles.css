@@ -717,31 +717,6 @@ li {
   margin-bottom: 0;
 }
 
-.routeButtonRow {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.routeButton {
-  border: none;
-  color: #363434;
-  background-color: #e8c4b8;
-  border-radius: 5px;
-  font-family: 'poppins', sans-serif;
-  font-size: 1rem;
-  height: 30px;
-  padding: 5px 10px;
-  margin: 1rem 0;
-}
-
-input#ORIGIN,
-input#DESTINATION {
-  background-color: #e1dbd1;
-  font-family: 'raleway', sans-serif;
-  letter-spacing: 0.1rem;
-  color: #363434;
-}
-
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
