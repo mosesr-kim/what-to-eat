@@ -26,6 +26,12 @@ export default class SearchForm extends React.Component {
     this.props.onSubmit(searchParams);
   }
 
+  componentDidMount() {
+    if (this.props.location !== null) {
+      this.setState({ location: this.props.location.zipCode });
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.location !== this.props.location) {
       this.setState({ location: this.props.location.zipCode });
