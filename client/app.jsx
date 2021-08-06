@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
   handleSuccess(position) {
     const { latitude, longitude } = position.coords;
-    fetch(`/api/location?lat=${latitude}&lng=${longitude}`)
+    fetch(`/api/zipCode?lat=${latitude}&lng=${longitude}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
