@@ -24,14 +24,7 @@ export default class Map extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          origin: data,
-          destination: this.props.displayAddress
-        });
-      });
+    this.setState({ destination: this.props.displayAddress });
   }
 
   componentDidUpdate(prevProps) {
