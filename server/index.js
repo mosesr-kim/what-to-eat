@@ -186,7 +186,7 @@ app.get('/api/address', (req, res, next) => {
     .then(response => response.json())
     .then(data => {
       const address = data.results[0].formatted_address;
-      res.status(200).send(address);
+      res.status(200).send(JSON.stringify(address));
     })
     .catch(err => next(err));
 });

@@ -13,8 +13,8 @@ export default class Map extends React.Component {
       destination: ''
     };
     this.directionsCallback = this.directionsCallback.bind(this);
-    this.getOrigin = this.getOrigin.bind(this);
-    this.getDestination = this.getDestination.bind(this);
+    this.originChange = this.originChange.bind(this);
+    this.destinationChange = this.destinationChange.bind(this);
     this.onClick = this.onClick.bind(this);
   }
 
@@ -26,17 +26,27 @@ export default class Map extends React.Component {
     }
   }
 
-  getOrigin(ref) {
-    this.origin = ref;
+  originChange(event) {
+    this.setState({ origin: event.target.value });
   }
 
-  getDestination(ref) {
-    this.destination = ref;
+  destinationChange(event) {
+    this.setState({ destination: event.target.value });
   }
 
   onClick() {
     if (this.origin.value !== '' && this.destination.value !== '') {
       this.setState({ origin: this.origin.value, destination: this.destination.value });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.lat !== this.props.lat && prevProps.lng !== this.props.lng) {
+      fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({ origin: data });
+        });
     }
   }
 
@@ -54,14 +64,14 @@ export default class Map extends React.Component {
                 <div className='col-md-6'>
                   <div className='form-group'>
                     <br />
-                    <input id='ORIGIN' className='form-control' type='text' ref={this.getOrigin} placeholder="Origin" autoComplete="off" />
+                    <input id='ORIGIN' className='form-control' type='text' value={this.state.origin} onChange={this.originChange} placeholder="Origin" autoComplete="off" />
                   </div>
                 </div>
 
                 <div className='col-md-6'>
                   <div className='form-group'>
                     <br />
-                    <input id='DESTINATION' className='form-control' type='text' ref={this.getDestination} placeholder="Destination" autoComplete="off" />
+                    <input id='DESTINATION' className='form-control' type='text' value={this.state.destination} onChange={this.destinationChange} placeholder="Destination" autoComplete="off" />
                   </div>
                 </div>
               </div>
