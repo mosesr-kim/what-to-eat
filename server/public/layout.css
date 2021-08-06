@@ -19,3 +19,8 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}

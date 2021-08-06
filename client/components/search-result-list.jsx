@@ -23,26 +23,18 @@ export default class SearchResultList extends React.Component {
                 <img src={imageURL} alt="business image" className="searchImage"/>
               </div>
               <div className="textColumn align-items-start">
-                <div className="row g-0">
-                  <p className="restaurantNameText">
-                    {number}. {name}
-                  </p>
-                </div>
-                <div className="row g-0">
-                  <p className="restaurantRating">
-                    {rating} <Stars rating={rating} />{reviewCount} Reviews
-                  </p>
-                </div>
-                <div className="row g-0">
-                  <p className="restaurantCategory">
-                    {price} &#8226; {categoryList}
-                  </p>
-                </div>
-                <div className="row g-0">
-                  <p className="restaurantAddress">
-                    {displayAddress}
-                  </p>
-                </div>
+                <p className="restaurantNameText">
+                  {number}. {name}
+                </p>
+                <p className="restaurantRating">
+                  {rating} <Stars rating={rating} />{reviewCount} Reviews
+                </p>
+                <p className="restaurantCategory">
+                  {price} &#8226; {categoryList}
+                </p>
+                <p className="restaurantAddress">
+                  {displayAddress}
+                </p>
               </div>
             </div>
           </li>

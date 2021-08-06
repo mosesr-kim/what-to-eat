@@ -27,10 +27,12 @@ export default class ReviewList extends React.Component {
     return (
       <>
         <div className="reviewsContainer">
+          <div className="reviewsInnerContainer">
             <div className="reviewHeader">
               <h2 className="reviewHeaderText">Reviews</h2>
             </div>
             <ul className="reviewList">{reviewsLi}</ul>
+          </div>
         </div>
       </>
     );

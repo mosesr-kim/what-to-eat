@@ -35,6 +35,7 @@
   height: 2.5rem;
   width: 2rem;
   border-radius: 0 0.3rem 0.3rem 0;
+  padding: 0;
 }
 
 .searchIcon {
@@ -50,20 +51,20 @@
 
 .restaurantSearchInput,
 .locationSearchInput {
-  width: 18rem;
+  width: 17rem;
   height: 2.5rem;
   background-color: #e1dbd1;
   border: none;
   border-radius: 0.3rem 0 0 0.3rem;
   text-indent: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1rem;
   color: #363434;
 }
 
 .locationSearchInput {
-  width: 6rem;
+  width: 5rem;
   height: 2.5rem;
   border-left: 1px solid #363434;
   border-radius: 0;
@@ -72,7 +73,7 @@
 .restaurantSearchInput::placeholder,
 .locationSearchInput::placeholder {
   font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1rem;
 }
 
@@ -124,6 +125,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 20%;
+  padding: 0;
 }
 
 .searchImage {
@@ -141,7 +143,8 @@ li {
   width: 80%;
   justify-content: center;
   height: 100px;
-  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .restaurantNameText,
@@ -152,6 +155,10 @@ li {
   margin-bottom: 0;
   font-size: 1rem;
   font-family: 'poppins', sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .restaurantNameText {
@@ -180,11 +187,6 @@ li {
   color: #7c7777;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
-}
-
-.imageColumn,
-.textColumn {
-  padding: 0;
 }
 
 .details {
@@ -249,9 +251,14 @@ li {
 }
 
 .reviewsContainer {
-  width: 95%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
   margin-top: 1rem;
+  border-bottom: 1px solid #e1dbd1;
+}
+
+.reviewsInnerContainer {
+  width: 95%;
 }
 
 .reviewHeader {
@@ -359,6 +366,7 @@ li {
 .createNewCollectionLink {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .createNewCollectionText {
@@ -620,6 +628,10 @@ li {
   font-size: 1rem;
   font-family: 'poppins', sans-serif;
   padding-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .randomRestaurantNameText {
@@ -654,6 +666,11 @@ li {
   font-family: 'raleway', sans-serif;
   color: #e1e1e1;
   margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 0 1rem;
 }
 
 .closeButtonRow {
@@ -675,6 +692,31 @@ li {
   filter: brightness(95%);
 }
 
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  border-bottom: 1px solid #e1dbd1;
+}
+
+.mapInnerContainer {
+  width: 95%;
+}
+
+.mapHeader {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  color: #e8c4b8;
+  font-family: 'raleway', sans-serif;
+}
+
+.mapHeaderText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
@@ -694,6 +736,10 @@ li {
     font-size: 1rem;
     letter-spacing: 0.1rem;
   }
+
+  .textColumn {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 668px) {
@@ -711,7 +757,11 @@ li {
     height: 275px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 90%;
+  }
+
+  .mapInnerContainer {
     width: 90%;
   }
 
@@ -766,7 +816,11 @@ li {
     height: 300px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 80%;
+  }
+
+  .mapInnerContainer {
     width: 80%;
   }
 }
@@ -788,8 +842,27 @@ li {
     padding-left: 10px;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
     width: 70%;
+  }
+
+  .mapInnerContainer {
+    width: 70%;
+  }
+
+  .restaurantSearchInput,
+  .locationSearchInput {
+    width: 18rem;
+    font-size: 1rem;
+  }
+
+  .locationSearchInput {
+    width: 6rem;
+  }
+
+  .restaurantSearchInput::placeholder,
+  .locationSearchInput::placeholder {
+    font-size: 1rem;
   }
 }
 
@@ -798,42 +871,51 @@ li {
     max-width: 50%;
   }
 
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 65%;
+  }
+
+  .mapInnerContainer {
     width: 65%;
   }
 }
 
 @media (min-width: 1200px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 60%;
+  }
+
+  .mapInnerContainer {
     width: 60%;
   }
 }
 
 @media (min-width: 1300px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 50%;
+  }
+
+  .mapInnerContainer {
     width: 50%;
   }
 }
 
 @media (min-width: 1400px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
+    width: 45%;
+  }
+
+  .mapInnerContainer {
     width: 45%;
   }
 }
 
 @media (min-width: 2300px) {
-  .reviewsContainer {
+  .reviewsInnerContainer {
     width: 40%;
   }
-}
 
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
+  .mapInnerContainer {
+    width: 40%;
   }
 }

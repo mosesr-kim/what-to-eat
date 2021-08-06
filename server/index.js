@@ -42,7 +42,7 @@ app.get('/api/search', (req, res, next) => {
   });
 });
 
-app.get('/api/location', (req, res, next) => {
+app.get('/api/zipCode', (req, res, next) => {
   const { lat, lng } = req.query;
   if (!lat || !lng) {
     throw new ClientError(400, 'latitude and longitude are required');
@@ -175,6 +175,20 @@ app.get('/api/collection', (req, res, next) => {
       : [];
     res.status(200).send([{ name: result.rows[0].name, restaurants: restaurants }]);
   }).catch(err => next(err));
+});
+
+app.get('/api/address', (req, res, next) => {
+  const { lat, lng } = req.query;
+  if (!lat || !lng) {
+    throw new ClientError(400, 'latitude and longitude are required');
+  }
+  fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.GOOGLE_MAPS_API_KEY}`)
+    .then(response => response.json())
+    .then(data => {
+      const address = data.results[0].formatted_address;
+      res.status(200).send(JSON.stringify(address));
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);
