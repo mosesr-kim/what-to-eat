@@ -13,9 +13,6 @@ export default class Map extends React.Component {
       destination: ''
     };
     this.directionsCallback = this.directionsCallback.bind(this);
-    this.originChange = this.originChange.bind(this);
-    this.destinationChange = this.destinationChange.bind(this);
-    this.onClick = this.onClick.bind(this);
   }
 
   directionsCallback(response) {
@@ -26,22 +23,15 @@ export default class Map extends React.Component {
     }
   }
 
-  originChange(event) {
-    this.setState({ origin: event.target.value });
-  }
-
-  destinationChange(event) {
-    this.setState({ destination: event.target.value });
-  }
-
-  onClick() {
-    if (this.origin.value !== '' && this.destination.value !== '') {
-      this.setState({ origin: this.origin.value, destination: this.destination.value });
-    }
-  }
-
   componentDidMount() {
-    this.setState({ destination: this.props.displayAddress });
+    fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          origin: data,
+          destination: this.props.displayAddress
+        });
+      });
   }
 
   componentDidUpdate(prevProps) {
@@ -49,7 +39,10 @@ export default class Map extends React.Component {
       fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
         .then(response => response.json())
         .then(data => {
-          this.setState({ origin: data });
+          this.setState({
+            origin: data,
+            destination: this.props.displayAddress
+          });
         });
     }
   }
@@ -63,29 +56,6 @@ export default class Map extends React.Component {
           </div>
 
           <div className='map'>
-            <div className='map-settings'>
-              <div className='row'>
-                <div className='col-md-6'>
-                  <div className='form-group'>
-                    <br />
-                    <input id='ORIGIN' className='form-control' type='text' value={this.state.origin} onChange={this.originChange} placeholder="Origin" autoComplete="off" />
-                  </div>
-                </div>
-
-                <div className='col-md-6'>
-                  <div className='form-group'>
-                    <br />
-                    <input id='DESTINATION' className='form-control' type='text' value={this.state.destination} onChange={this.destinationChange} placeholder="Destination" autoComplete="off" />
-                  </div>
-                </div>
-              </div>
-              <div className="routeButtonRow">
-                <button className='routeButton' type='button' onClick={this.onClick}>
-                  Route
-                </button>
-              </div>
-            </div>
-
             <div className='map-container'>
               <LoadScript googleMapsApiKey={apiKey} >
                 <GoogleMap
