@@ -24,11 +24,22 @@ export default class Map extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ destination: this.props.displayAddress });
+    if (this.props.lat !== null && this.props.lng !== null) {
+      fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            origin: data,
+            destination: this.props.displayAddress
+          });
+        });
+    } else {
+      this.setState({ destination: this.props.displayAddress });
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.lat !== this.props.lat && prevProps.lng !== this.props.lng) {
+    if (prevProps !== this.props) {
       fetch(`/api/address?lat=${this.props.lat}&lng=${this.props.lng}`)
         .then(response => response.json())
         .then(data => {
