@@ -12,12 +12,12 @@ export default class CollectionList extends React.Component {
             <img src={collection.image} alt={`${collection.name} image`} className={`collectionImage ${image}`} />
           </div>
           <div className="collectionTextColumn">
-            <h3 className="collectionNameText">
+            <p className="collectionNameText">
               {collection.name}
-            </h3>
-            <h3 className="collectionCountText">
+            </p>
+            <p className="collectionCountText">
               {collection.count} places saved
-            </h3>
+            </p>
           </div>
           { this.props.saving
             ? <SaveButton saving={this.props.saving} collectionId={collection.collectionId} handleClick={this.props.handleClick} handleSave={this.props.handleSave} />

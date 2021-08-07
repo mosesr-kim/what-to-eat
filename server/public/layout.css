@@ -1,6 +1,11 @@
 body {
   background-color: #363434;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'raleway', sans-serif;
+}
+
+p,
+button {
+  font-family: 'poppins', sans-serif;
 }
 
 .hidden {

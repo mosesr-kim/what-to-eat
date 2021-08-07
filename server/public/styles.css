@@ -58,7 +58,6 @@
   border-radius: 0.3rem 0 0 0.3rem;
   text-indent: 0.5rem;
   font-size: 0.8rem;
-  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.1rem;
   color: #363434;
 }
@@ -72,7 +71,6 @@
 
 .restaurantSearchInput::placeholder,
 .locationSearchInput::placeholder {
-  font-family: 'Raleway', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
 }
@@ -92,7 +90,6 @@
 }
 
 .searchResultHeaderText {
-  font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
   letter-spacing: 0.15rem;
@@ -154,7 +151,6 @@ li {
   padding-left: 10px;
   margin-bottom: 0;
   font-size: 1rem;
-  font-family: 'poppins', sans-serif;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -264,7 +260,6 @@ li {
 .reviewHeader {
   margin-left: 2rem;
   color: #e8c4b8;
-  font-family: 'raleway', sans-serif;
 }
 
 .reviewHeaderText {
@@ -351,11 +346,11 @@ li {
 
 .createNewCollectionText {
   display: inline-block;
-  font-family: 'raleway', sans-serif;
   color: #e1dbd1;
   margin-left: 0.5rem;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+  font-weight: 400;
 }
 
 .newCollectionLink:hover {
@@ -372,7 +367,6 @@ li {
 }
 
 .newCollectionHeaderText {
-  font-family: 'raleway', sans-serif;
   color: #e1dbd1;
   letter-spacing: 0.1rem;
   font-weight: 400;
@@ -380,7 +374,6 @@ li {
 }
 
 .newCollectionLabel {
-  font-family: 'raleway', sans-serif;
   color: #e8c4b8;
   letter-spacing: 0.1rem;
   font-size: 1rem;
@@ -394,14 +387,12 @@ li {
   border-radius: 5px;
   text-indent: 0.5rem;
   background-color: #e1dbd1;
-  font-family: 'raleway', sans-serif;
   color: #363434;
   letter-spacing: 0.1rem;
   margin-bottom: 0.5rem;
 }
 
 .newCollectionInput::placeholder {
-  font-family: 'raleway', sans-serif;
   color: #7c7777;
   font-size: 1rem;
 }
@@ -427,7 +418,6 @@ li {
   border: none;
   color: #363434;
   background-color: #e8c4b8;
-  font-family: 'poppins', sans-serif;
   font-size: 0.9rem;
   border-radius: 5px;
   width: 4.5rem;
@@ -480,17 +470,18 @@ li {
 }
 
 .collectionTextColumn {
-  font-family: 'poppins', sans-serif;
   color: #363434;
   padding-left: 5px;
 }
 
 .collectionNameText {
   font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 
 .collectionCountText {
   font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 
 .saveButton {
@@ -514,7 +505,6 @@ li {
 }
 
 .collectionHeaderText {
-  font-family: 'raleway', sans-serif;
   font-size: 1.5rem;
   color: #e8c4b8;
 }
@@ -606,7 +596,6 @@ li {
 .randomRestaurantAddress {
   margin-bottom: 0;
   font-size: 1rem;
-  font-family: 'poppins', sans-serif;
   padding-left: 10px;
   overflow: hidden;
   white-space: nowrap;
@@ -643,7 +632,6 @@ li {
 }
 
 .randomRestaurantHeader {
-  font-family: 'raleway', sans-serif;
   color: #e1e1e1;
   margin-bottom: 0;
   overflow: hidden;
@@ -687,7 +675,6 @@ li {
   margin-left: 2rem;
   margin-bottom: 1rem;
   color: #e8c4b8;
-  font-family: 'raleway', sans-serif;
 }
 
 .mapHeaderText {
