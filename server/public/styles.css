@@ -314,26 +314,6 @@ li {
   font-size: 2rem;
 }
 
-.homeButtonText {
-  display: inline;
-  font-family: 'raleway', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  margin-left: 0.5rem;
-  margin-bottom: 0;
-}
-
-.homeButtonAnchor {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  color: #e1dbd1;
-}
-
-.homeButtonAnchor:hover {
-  color: #e8c4b8;
-}
-
 .appDrawerBackground {
   position: fixed;
   z-index: 100;
