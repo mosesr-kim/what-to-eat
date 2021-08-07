@@ -717,6 +717,17 @@ li {
   margin-bottom: 0;
 }
 
+.instructions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.instructionsText {
+  color: #e8c4b8;
+  letter-spacing: 0.1rem;
+}
+
 @media (min-width: 568px) {
   .searchResultContainer {
     max-width: 90%;
@@ -774,6 +785,10 @@ li {
 }
 
 @media (min-width: 768px) {
+  .searchForm {
+    padding-left: 2rem;
+  }
+
   .searchResultContainer {
     max-width: 70%;
   }

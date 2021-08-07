@@ -8,7 +8,8 @@ export default class Home extends React.Component {
     this.state = {
       restaurant: '',
       location: '',
-      searchResults: null
+      searchResults: null,
+      searched: false
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -20,15 +21,22 @@ export default class Home extends React.Component {
         this.setState({
           restaurant: searchParams.restaurant,
           location: searchParams.location,
-          searchResults: data
+          searchResults: data,
+          searched: true
         });
       });
   }
 
   render() {
+    const searched = this.state.searched ? 'hidden' : '';
     return (
       <>
         <Header onSubmit={this.handleSearch} location={this.props.location} route={this.props.route} />
+        <div className={`instructions ${searched}`}>
+          <p className="instructionsText">
+            Search for your favorite restaurant
+          </p>
+        </div>
         <SearchResults searchResults={this.state} />
       </>
     );
